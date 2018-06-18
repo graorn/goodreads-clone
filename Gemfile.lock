@@ -113,6 +113,10 @@ GEM
     em-websocket (0.5.1)
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0.6.0)
+    email_spec (2.2.0)
+      htmlentities (~> 4.3.3)
+      launchy (~> 2.1)
+      mail (~> 2.7)
     erubi (1.7.1)
     eventmachine (1.2.7)
     eventmachine (1.2.7-java)
@@ -154,6 +158,7 @@ GEM
       guard (~> 2.1)
       guard-compat (~> 1.1)
       rspec (>= 2.99.0, < 4.0)
+    htmlentities (4.3.4)
     http_parser.rb (0.6.0)
     http_parser.rb (0.6.0-java)
     i18n (1.0.1)
@@ -163,6 +168,11 @@ GEM
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
       multi_json (>= 1.2)
+    launchy (2.4.3)
+      addressable (~> 2.3)
+    launchy (2.4.3-java)
+      addressable (~> 2.3)
+      spoon (~> 0.0.1)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -374,6 +384,7 @@ DEPENDENCIES
   cucumber-rails
   database_cleaner
   devise
+  email_spec
   factory_bot_rails
   guard-annotate
   guard-livereload (~> 2.5)

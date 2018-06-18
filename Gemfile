@@ -47,6 +47,7 @@ group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'capybara'
   gem 'cucumber-rails', require: false
+  gem 'email_spec'
   gem 'factory_bot_rails'
   gem 'guard-annotate'
   gem 'guard-rspec'
