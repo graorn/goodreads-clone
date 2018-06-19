@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>GoodreadsClone</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>GoodreadsClone</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
+<body>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
 
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    
-    <% if user_signed_in? %>
-      <%= link_to("Log out", destroy_user_session_path, method: :delete) %>
-    <% end %>
+  <% if user_signed_in? %>
+    <%= link_to('Log out', destroy_user_session_path, method: :delete) %>
+  <% end %>
 
-    <%= yield %>
-  </body>
+  <%= yield %>
+
+</body>
 </html>

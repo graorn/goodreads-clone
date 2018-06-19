@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 # == Schema Information
 #
 # Table name: users
@@ -20,8 +19,9 @@
 #  confirmation_token     :string
 #  confirmed_at           :datetime
 #  confirmation_sent_at   :datetime
+#  provider               :string
+#  uid                    :string
 #
-
 
 FactoryBot.define do
   factory :user do

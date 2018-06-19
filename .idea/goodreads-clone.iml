@@ -38,10 +38,12 @@
     <orderEntry type="library" scope="PROVIDED" name="annotate (v2.7.4, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="arel (v9.0.0, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="ast (v2.4.0, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="autoprefixer-rails (v8.6.3, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="backports (v3.11.3, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bcrypt (v3.1.12, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bindex (v0.5.0, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bootsnap (v1.3.0, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="bootstrap (v4.1.1, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="brakeman (v4.3.1, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="builder (v3.2.3, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bundler (v1.16.2, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
@@ -53,10 +55,8 @@
     <orderEntry type="library" scope="PROVIDED" name="coffee-script-source (v1.12.2, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="concurrent-ruby (v1.0.5, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="crass (v1.0.4, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="cucumber (v3.1.1, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="cucumber-core (v3.1.0, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="cucumber-expressions (v6.0.1, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="cucumber-rails (v1.6.0, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="cucumber-tag_expressions (v1.1.1, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="cucumber-wire (v0.0.1, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="database_cleaner (v1.7.0, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
@@ -79,11 +79,13 @@
     <orderEntry type="library" scope="PROVIDED" name="guard-cucumber (v1.5.4, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="guard-livereload (v2.5.2, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="guard-rspec (v4.7.3, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="hashie (v3.5.7, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="htmlentities (v4.3.4, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="http_parser.rb (v0.6.0, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="i18n (v1.0.1, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="jaro_winkler (v1.5.1, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="jbuilder (v2.7.0, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="jquery-rails (v4.3.3, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="launchy (v2.4.3, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="listen (v3.1.5, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="loofah (v2.2.2, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
@@ -100,6 +102,7 @@
     <orderEntry type="library" scope="PROVIDED" name="msgpack (v1.2.4, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="multi_json (v1.13.1, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="multi_test (v0.1.2, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="multipart-post (v2.0.0, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="nenv (v0.3.0, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="nio4r (v2.3.1, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="nokogiri (v1.8.3, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
@@ -108,13 +111,13 @@
     <orderEntry type="library" scope="PROVIDED" name="parallel (v1.12.1, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="parser (v2.5.1.0, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="pg (v1.0.0, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="popper_js (v1.12.9, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="powerpack (v0.1.2, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="pry (v0.11.3, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="public_suffix (v3.0.2, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="puma (v3.11.4, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="pundit (v1.1.0, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rack (v2.0.5, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rack-livereload (v0.3.17, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rack-test (v1.0.0, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rails (v5.2.0, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rails-controller-testing (v1.0.2, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
