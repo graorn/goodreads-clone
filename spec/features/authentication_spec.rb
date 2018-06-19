@@ -34,11 +34,15 @@ describe "Authentication" do
   it "should be able to logout" do
     visit root_path
 
+    @registered_user = FactoryBot.create(
+        :user,
+        :email => 'tester@testdomain.test',
+        :password => 'pa$$word')
+
     fill_in 'user_email', with: 'tester@testdomain.test'
     fill_in 'user_password', with: 'pa$$word'
 
     click_button 'Log in'
-
     click_link 'Log out'
 
     expect(page).to have_content('Log in')
