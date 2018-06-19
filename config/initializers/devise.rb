@@ -4,7 +4,7 @@
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
 
-  config.omniauth :facebook, "APP_ID", "APP_SECRET"
+  config.omniauth :facebook, "310718592799413", "83282b9661749ca6baca5b78630e35a7"
 
 
   # The secret key used by Devise. Devise uses this key to generate

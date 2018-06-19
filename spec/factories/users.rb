@@ -21,6 +21,8 @@
 #  confirmation_sent_at   :datetime
 #  provider               :string
 #  uid                    :string
+#  name                   :string
+#  image                  :string
 #
 
 FactoryBot.define do
