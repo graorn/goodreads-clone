@@ -67,6 +67,8 @@ group :development do
   gem 'rack-livereload'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'guard-cucumber'
+
 end
 
 group :production do

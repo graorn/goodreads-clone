@@ -14,14 +14,8 @@ When('I fill in the sign up form') do
   click_button 'Sign up'
 end
 
-When('I confirm the email') do
-  open_email('tester@testdomain.test')
-
-  visit_in_email('Confirm my account')
-end
-
 Then('I should see that my account is confirmed') do
-  message = 'Your email address has been successfully confirmed'
+  message = 'Welcome! You have signed up successfully.'
 
   expect(page).to have_content(message)
 end
