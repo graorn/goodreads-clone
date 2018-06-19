@@ -43,6 +43,7 @@ gem 'responders'
 gem 'bootstrap', '~> 4.1.1'
 gem 'jquery-rails'
 gem 'omniauth-facebook'
+gem 'simple_form'
 
 
 group :development, :test do
