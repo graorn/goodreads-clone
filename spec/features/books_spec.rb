@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 describe 'books' do
   it 'are showed in a list' do
     visit books_path
@@ -13,16 +15,13 @@ describe 'books' do
 
   it 'can be put to a reading list' do
     return false
-
   end
 
   it 'can be rated' do
     return false
-
   end
 
   it 'can have reviews' do
     return false
-
   end
 end

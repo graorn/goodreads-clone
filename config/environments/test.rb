@@ -48,4 +48,20 @@ Rails.application.configure do
 
   config.action_mailer.default_url_options = { host: 'localhost',
                                                port: 3000 }
+  OmniAuth.config.test_mode = true
+  OmniAuth.config.mock_auth[:facebook] = OmniAuth::AuthHash.new ({
+    'provider' => 'facebook',
+    'uid' => '123545',
+    'user_info' => {
+    'name' => 'mockuser',
+    'image' => 'mock_user_thumbnail_url',
+    'email' => 'mock_email'
+  },
+    'credentials' => {
+    'token' => 'mock_token',
+    'secret' => 'mock_secret'
+    }
+  })
+
+
 end

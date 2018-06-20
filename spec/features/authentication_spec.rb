@@ -1,7 +1,8 @@
-describe "Authentication" do
+# frozen_string_literal: true
 
+describe 'Authentication' do
   context 'when not signed up' do
-    it "is able to sign up" do
+    it 'is able to sign up' do
       visit root_path
 
       click_link 'Sign up'
@@ -19,13 +20,14 @@ describe "Authentication" do
   end
 
   context 'when signed up' do
-    it "is able to login" do
+    it 'is able to login' do
       visit root_path
 
       @registered_user = FactoryBot.create(
-          :user,
-          :email => 'tester@testdomain.test',
-          :password => 'pa$$word')
+        :user,
+        email: 'tester@testdomain.test',
+        password: 'pa$$word'
+      )
 
       fill_in 'user_email', with: 'tester@testdomain.test'
       fill_in 'user_password', with: 'pa$$word'
@@ -36,15 +38,15 @@ describe "Authentication" do
     end
   end
 
-
   context 'when logged in' do
-    it "is able to logout" do
+    it 'is able to logout' do
       visit root_path
 
       @registered_user = FactoryBot.create(
-          :user,
-          :email => 'tester@testdomain.test',
-          :password => 'pa$$word')
+        :user,
+        email: 'tester@testdomain.test',
+        password: 'pa$$word'
+      )
 
       fill_in 'user_email', with: 'tester@testdomain.test'
       fill_in 'user_password', with: 'pa$$word'
@@ -53,7 +55,6 @@ describe "Authentication" do
       click_link 'Log out'
 
       expect(page).to have_content('Log in')
-
     end
   end
 end
