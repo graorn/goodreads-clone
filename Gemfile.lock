@@ -142,6 +142,9 @@ GEM
       guard (~> 2.1)
       guard-compat (~> 1.1)
       rspec (>= 2.99.0, < 4.0)
+    guard-rubocop (1.3.0)
+      guard (~> 2.0)
+      rubocop (~> 0.20)
     hashie (3.5.7)
     htmlentities (4.3.4)
     http_parser.rb (0.6.0)
@@ -236,6 +239,8 @@ GEM
     pundit (1.1.0)
       activesupport (>= 3.0.0)
     rack (2.0.5)
+    rack-livereload (0.3.17)
+      rack
     rack-test (1.0.0)
       rack (>= 1.0, < 3)
     rails (5.2.0)
@@ -393,6 +398,7 @@ DEPENDENCIES
   guard-annotate
   guard-livereload (~> 2.5)
   guard-rspec
+  guard-rubocop
   jbuilder (~> 2.5)
   jquery-rails
   launchy
@@ -401,6 +407,7 @@ DEPENDENCIES
   pg
   puma (~> 3.11)
   pundit
+  rack-livereload
   rails (~> 5.2.0)
   rails-controller-testing
   responders

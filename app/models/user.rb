@@ -19,7 +19,7 @@
 #  updated_at             :datetime         not null
 #  confirmation_token     :string
 #  confirmed_at           :datetime
-#  confirmation_sent_at   :datetime
+#  confirmation_sent_at   :time
 #  provider               :string
 #  uid                    :string
 #  name                   :string
@@ -40,4 +40,6 @@ class User < ApplicationRecord
       user.image = auth.info.image
     end
   end
+
+  has_many :books
 end

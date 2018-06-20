@@ -19,7 +19,7 @@
 #  updated_at             :datetime         not null
 #  confirmation_token     :string
 #  confirmed_at           :datetime
-#  confirmation_sent_at   :datetime
+#  confirmation_sent_at   :time
 #  provider               :string
 #  uid                    :string
 #  name                   :string
