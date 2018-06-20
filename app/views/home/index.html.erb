@@ -1,4 +1,12 @@
 <div class="jumbotron">
   <h1>Welcome to Goodreads Clone</h1>
   <p>A place for all book lovers</p>
+
+  <% if user_signed_in? %>
+    <%= link_to 'Sign out', destroy_user_session_path, class: 'btn btn-primary', method: :delete %>
+  <% else %>
+    <%= link_to 'Sign up', new_user_registration_path, class: 'btn btn-primary' %>
+    <%= link_to 'Sign in', new_user_session_path, class: 'btn btn-primary' %>
+  <% end %>
+
 </div>
