@@ -26,8 +26,13 @@
 #  image                  :string
 #
 
+require 'ffaker'
+
 FactoryBot.define do
   factory :user do
+    name FFaker::Name.name
+    email FFaker::Internet.free_email
+    password FFaker::Internet.password
     confirmed_at Time.now
   end
 end

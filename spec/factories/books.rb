@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: books
@@ -17,16 +18,20 @@
 #  user_id     :integer
 #
 
+require 'ffaker'
+
 FactoryBot.define do
   factory :book do
-    title 'MyString'
-    author 'MyString'
-    genre 'MyString'
-    description 'MyString'
-    rating 1
-    review 'MyText'
-    favorite false
-    to_read false
-    user_id 1
+    title FFaker::Book.title
+    author FFaker::Book.author
+    genre FFaker::Book.genre
+    description FFaker::Book.description
+    rating 1..5
+    review FFaker::BaconIpsum.paragraphs
+    favorite FFaker::Boolean.random
+    to_read FFaker::Boolean.maybe
+    created_at 7.days.ago
+    updated_at 2.days.ago
+    user
   end
 end

@@ -1,22 +1,5 @@
 # frozen_string_literal: true
 
-# A sample Guardfile
-# More info at https://github.com/guard/guard#readme
-
-## Uncomment and set this to only include directories you want to watch
-# directories %w(app lib config test spec features) \
-#  .select{|d| Dir.exists?(d) ? d : UI.warning("Directory #{d} does not exist")}
-
-## Note: if you are using the `directories` clause above and you are not
-## watching the project directory ('.'), then you will want to move
-## the Guardfile to a watched dir and symlink it back, e.g.
-#
-#  $ mkdir config
-#  $ mv Guardfile config/
-#  $ ln -s config/Guardfile .
-#
-# and, you'll have to watch "config/Guardfile" instead of "Guardfile"
-
 guard 'livereload' do
   extensions = {
     css: :css,
@@ -28,13 +11,11 @@ guard 'livereload' do
     png: :png,
     gif: :gif,
     jpg: :jpg,
-    jpeg: :jpeg,
-    # less: :less, # uncomment if you want LESS stylesheets done in browser
+    jpeg: :jpeg
   }
 
   rails_view_exts = %w[erb haml slim]
 
-  # file types LiveReload may optimize refresh for
   compiled_exts = extensions.values.uniq
   watch(%r{public/.+\.(#{compiled_exts * '|'})})
 
@@ -43,44 +24,37 @@ guard 'livereload' do
           (?:app|vendor)
           (?:/assets/\w+/(?<path>[^.]+) # path+base without extension
            (?<ext>\.#{ext})) # matching extension (must be first encountered)
-          (?:\.\w+|$) # other extensions
+          (?:\.\w+|$)
           }x) do |m|
       path = m[1]
       "/assets/#{path}.#{type}"
     end
   end
 
-  # file needing a full reload of the page anyway
   watch(%r{app/views/.+\.(#{rails_view_exts * '|'})$})
   watch(%r{app/helpers/.+\.rb})
   watch(%r{config/locales/.+\.yml})
 end
 
-# Note: The cmd option is now required due to the increasing number of ways
-#       rspec may be run, below are examples of the most common uses.
-#  * bundler: 'bundle exec rspec'
-#  * bundler binstubs: 'bin/rspec'
-#  * spring: 'bin/rspec' (This will use spring if running and you have
-#                          installed the spring binstubs per the docs)
-#  * zeus: 'zeus rspec' (requires the server to be started separately)
-#  * 'just' rspec: 'rspec'
-
 guard :rspec, cmd: 'bundle exec rspec' do
   require 'guard/rspec/dsl'
   dsl = Guard::RSpec::Dsl.new(self)
 
-  # Feel free to open issues for suggestions and improvements
-
   # run every updated spec file
   watch(%r{^spec/.+_spec\.rb$})
+
   # run the lib specs when a file in lib/ changes
   watch(%r{^lib/(.+)\.rb$}) { |m| "spec/lib/#{m[1]}_spec.rb" }
+
   # run the model specs related to the changed model
   watch(%r{^app/(.+)\.rb$}) { |m| "spec/#{m[1]}_spec.rb" }
+
   # run the view specs related to the changed view
   watch(%r{^app/(.*)(\.erb|\.haml)$}) { |m| "spec/#{m[1]}#{m[2]}_spec.rb" }
+
   # run the integration specs related to the changed controller
   watch(%r{^app/controllers/(.+)\.rb}) { |m| "spec/requests/#{m[1]}_spec.rb" }
+
   # run all integration tests when application controller change
   watch('app/controllers/application_controller.rb') { 'spec/requests' }
 
@@ -125,12 +99,4 @@ end
 
 guard 'annotate' do
   watch('db/schema.rb')
-
-  # Uncomment the following line if you also want to run annotate anytime
-  # a model file changes
-  # watch( 'app/models/**/*.rb' )
-
-  # Uncomment the following line if you are running routes annotation
-  # with the ":routes => true" option
-  # watch( 'config/routes.rb' )
 end
