@@ -2,6 +2,8 @@
 
 <h1>Books</h1>
 
+<%= render 'books/search_form' %>
+
 <div class="table-responsive">
   <table class="table table-striped table-bordered table-hover">
     <caption>List of books</caption>
@@ -27,11 +29,11 @@
         <tr scope="row">
           <td class="align-middle text-center"><%= book.title %></td>
           <td class="align-middle text-center"><%= book.author %></td>
-          <td class="align-middle text-center"><%= image_tag book.cover, class: 'img-fluid' %></td>
+          <td class="align-middle text-center"><%= image_tag book.cover, class: 'img-fluid ' %></td>
           <td class="align-middle text-center"><%= book.genre %></td>
-          <td class="align-middle text-center"><%= truncate(book.description, length: 100) %></td>
+          <td class="align-middle text-center"><%= truncate(book.description, length: 100, separator: ' ') %></td>
           <td class="align-middle text-center"><%= book.rating %></td>
-          <td class="align-middle text-center"><%= truncate(book.review, length: 100) %></td>
+          <td class="align-middle text-center"><%= truncate(book.review, length: 100, separator: ' ') %></td>
           <td class="align-middle text-center"><%= book.favorite %></td>
           <td class="align-middle text-center"><%= book.to_read %></td>
           <td class="align-middle text-center"><%= link_to 'Show', book %></td>

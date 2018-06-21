@@ -21,6 +21,8 @@ gem 'omniauth-facebook'
 gem 'pundit'
 gem 'responders'
 gem 'simple_form'
+gem 'ransack'
+
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
