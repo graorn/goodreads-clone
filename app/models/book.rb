@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: books
@@ -19,8 +20,10 @@
 #
 
 class Book < ApplicationRecord
+  acts_as_favoritable
   belongs_to :user
 
   validates_presence_of :title
   validates_presence_of :author
+
 end

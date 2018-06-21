@@ -1,7 +1,8 @@
-# frozen_string_literal: true
-
 class ProfileController < ApplicationController
+  before_action :authenticate_user!
+
   def index
-    @user = User
+    @user = current_user
+    @books = current_user.books
   end
 end

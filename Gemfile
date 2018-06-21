@@ -14,15 +14,15 @@ gem 'sass-rails', '~> 5.0'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 
+gem 'acts_as_favoritor'
 gem 'bootstrap', '~> 4.1.1'
 gem 'devise'
 gem 'jquery-rails'
 gem 'omniauth-facebook'
 gem 'pundit'
+gem 'ransack'
 gem 'responders'
 gem 'simple_form'
-gem 'ransack'
-
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
@@ -43,6 +43,7 @@ group :development do
   gem 'guard-rubocop'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'rack-livereload'
+  gem 'rails_best_practices'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'web-console', '>= 3.3.0'
