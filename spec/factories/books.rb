@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 # == Schema Information
 #
 # Table name: books
@@ -16,6 +15,7 @@
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #  user_id     :integer
+#  cover       :string
 #
 
 require 'ffaker'
@@ -25,6 +25,7 @@ FactoryBot.define do
     title FFaker::Book.title
     author FFaker::Book.author
     genre FFaker::Book.genre
+    cover FFaker::Book.cover
     description FFaker::Book.description
     rating 1..5
     review FFaker::BaconIpsum.paragraphs
