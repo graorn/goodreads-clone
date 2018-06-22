@@ -13,19 +13,18 @@ require 'ffaker'
 User.create!(
   name: 'test',
   email: 'test@mail.com',
-  password: 123_123
+  password: 123123
 )
 
 20.times do
   Book.create!(
     title: FFaker::Book.title,
     author: FFaker::Book.author,
-    cover: FFaker::Book.cover,
+    cover: FFaker::Book.orly_cover,
     genre: FFaker::Book.genre,
     description: FFaker::Book.description,
     rating: rand(1..5),
     review: FFaker::BaconIpsum.paragraphs,
-    favorite: FFaker::Boolean.random,
     to_read: FFaker::Boolean.maybe,
     created_at: 7.days.ago,
     updated_at: 2.days.ago,

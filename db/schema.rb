@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_21_134014) do
+ActiveRecord::Schema.define(version: 2018_06_22_122705) do
 
   create_table "books", force: :cascade do |t|
     t.string "title"
@@ -19,7 +19,6 @@ ActiveRecord::Schema.define(version: 2018_06_21_134014) do
     t.string "description"
     t.integer "rating"
     t.text "review"
-    t.boolean "favorite"
     t.boolean "to_read"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -27,21 +26,14 @@ ActiveRecord::Schema.define(version: 2018_06_21_134014) do
     t.string "cover"
   end
 
-  create_table "favorites", force: :cascade do |t|
-    t.string "favoritable_type", null: false
-    t.integer "favoritable_id", null: false
-    t.string "favoritor_type", null: false
-    t.integer "favoritor_id", null: false
-    t.string "scope", default: "favorite", null: false
-    t.boolean "blocked", default: false, null: false
+  create_table "favorite_books", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "book_id"
+    t.boolean "favorite"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["blocked"], name: "index_favorites_on_blocked"
-    t.index ["favoritable_id", "favoritable_type"], name: "fk_favoritables"
-    t.index ["favoritable_type", "favoritable_id"], name: "index_favorites_on_favoritable_type_and_favoritable_id"
-    t.index ["favoritor_id", "favoritor_type"], name: "fk_favorites"
-    t.index ["favoritor_type", "favoritor_id"], name: "index_favorites_on_favoritor_type_and_favoritor_id"
-    t.index ["scope"], name: "index_favorites_on_scope"
+    t.index ["book_id"], name: "index_favorite_books_on_book_id"
+    t.index ["user_id"], name: "index_favorite_books_on_user_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -72,7 +64,9 @@ ActiveRecord::Schema.define(version: 2018_06_21_134014) do
     t.string "uid"
     t.string "name"
     t.string "image"
+    t.integer "favorite_book_id"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["favorite_book_id"], name: "index_users_on_favorite_book_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 

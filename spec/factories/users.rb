@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 # == Schema Information
 #
 # Table name: users
@@ -24,6 +23,7 @@
 #  uid                    :string
 #  name                   :string
 #  image                  :string
+#  favorite_book_id       :integer
 #
 
 require 'ffaker'

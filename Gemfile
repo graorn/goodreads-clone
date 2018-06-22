@@ -14,7 +14,6 @@ gem 'sass-rails', '~> 5.0'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 
-gem 'acts_as_favoritor'
 gem 'bootstrap', '~> 4.1.1'
 gem 'devise'
 gem 'jquery-rails'

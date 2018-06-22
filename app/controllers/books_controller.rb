@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class BooksController < ApplicationController
-  before_action :set_book, only: %i[show edit update destroy]
+  before_action :set_book, only: %i[show edit update destroy favorite]
   before_action :authenticate_user!
 
   def index
@@ -54,6 +54,14 @@ class BooksController < ApplicationController
   def search
     index
     render :index
+  end
+
+  def favorite
+    if params[:favorite] == 'yes'
+      FavoriteBook.create(user_id: current_user.id, book_id: @book.id, favorite: true)
+    else
+      FavoriteBook.update(user_id: current_user.id, book_id: @book.id, favorite: false)
+    end
   end
 
   private

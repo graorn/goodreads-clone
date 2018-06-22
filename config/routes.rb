@@ -9,6 +9,8 @@ Rails.application.routes.draw do
     collection do
       match 'search' => 'books#search', via: %i[get post], as: :search
     end
+
+    post 'favorite', on: :member
   end
 
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }

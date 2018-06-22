@@ -1,4 +1,4 @@
-<%= simple_form_for(@book) do |f| %>
+<%= simple_form_for(@book, remote: true) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
@@ -9,7 +9,6 @@
     <%= f.input :description %>
     <%= f.input :rating %>
     <%= f.input :review %>
-    <%= f.input :favorite %>
     <%= f.input :to_read %>
   </div>
 

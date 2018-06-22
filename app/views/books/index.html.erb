@@ -4,11 +4,11 @@
 
 
 
-<%= sort_link(@q, :author, default_order: :asc)  do %>
+<%= sort_link(@q, :author, default_order: :asc) do %>
   <strong>Author name</strong>
 <% end %>
 
-<%= sort_link(@q, :title, default_order: :asc)  do %>
+<%= sort_link(@q, :title, default_order: :asc) do %>
   <strong>Title</strong>
 <% end %>
 
@@ -17,30 +17,23 @@
 
   <% @books.each do |book| %>
 
-    <% if book.user == current_user %>
+    <div class="col col-xs-6 col-md-3 col-lg-2">
 
-      <div class="col col-xs-6 col-md-3 col-lg-2">
+      <div class="card mb-5 border border-dark rounded shadow-lg">
+        <%= link_to(image_tag(book.cover, class: 'img-fluid border border-dark rounded'), book) %>
 
-        <div class="card mb-5">
-          <%= link_to(image_tag(book.cover, class: 'img-fluid'), book) %>
+        <div class="card-body">
+          <h5 class="card-title">  <%= book.title %> </h5>
+          <p> <%= book.author %> </p>
 
-          <div class="card-body">
-            <h5 class="card-title">  <%= book.title %> </h5>
-            <p> <%= book.author %> </p>
+          <p class="card-text"> <%= truncate(book.description, length: 100) %> </p>
 
-            <p class="card-text"> <%= truncate(book.description, length: 100) %> </p>
-
-            <%= link_to 'Show', book, class: 'btn btn-primary' %>
-
-            <% if book.favorite %>
-              <span><3</span>
-            <% end %>
-          </div>
+          <%= link_to 'Show', book, class: 'btn btn-primary' %>
+          <%= link_to 'Add as Favorite', favorite_book_path(book, favorite: 'yes'), remote: true, method: :post, id: "book-#{book.id}", class: 'btn btn-primary' %>
         </div>
-
       </div>
 
-    <% end %>
+    </div>
 
   <% end %>
 </div>

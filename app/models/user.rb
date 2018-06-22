@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 # == Schema Information
 #
 # Table name: users
@@ -24,14 +23,16 @@
 #  uid                    :string
 #  name                   :string
 #  image                  :string
+#  favorite_book_id       :integer
 #
 
 class User < ApplicationRecord
-  acts_as_favoritor
+  has_many :books
+  has_many :favorite_books, through: :books
+
 
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, omniauth_providers: %i[facebook]
-  has_many :books
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|

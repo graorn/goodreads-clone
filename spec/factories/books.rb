@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 # == Schema Information
 #
 # Table name: books
@@ -11,7 +10,6 @@
 #  description :string
 #  rating      :integer
 #  review      :text
-#  favorite    :boolean
 #  to_read     :boolean
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
