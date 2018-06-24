@@ -13,7 +13,7 @@ require 'ffaker'
 User.create!(
   name: 'test',
   email: 'test@mail.com',
-  password: 123123
+  password: 123_123
 )
 
 20.times do

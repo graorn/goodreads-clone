@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: users
@@ -29,7 +30,6 @@
 class User < ApplicationRecord
   has_many :books
   has_many :favorite_books, through: :books
-
 
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, omniauth_providers: %i[facebook]

@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'rails_helper'
+
 describe 'Authentication' do
   context 'when not signed up' do
     it 'is able to sign up' do
@@ -23,6 +25,8 @@ describe 'Authentication' do
     it 'is able to login' do
       visit root_path
 
+      click_link 'Log in'
+
       @registered_user = FactoryBot.create(
         :user,
         email: 'tester@testdomain.test',
@@ -41,6 +45,8 @@ describe 'Authentication' do
   context 'when logged in' do
     it 'is able to logout' do
       visit root_path
+
+      click_link 'Log in'
 
       @registered_user = FactoryBot.create(
         :user,

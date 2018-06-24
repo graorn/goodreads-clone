@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: favorite_books
@@ -12,8 +14,8 @@
 
 FactoryBot.define do
   factory :favorite_book do
-    belongs_to ""
-    belongs_to ""
+    belongs_to ''
+    belongs_to ''
     favorite false
   end
 end
