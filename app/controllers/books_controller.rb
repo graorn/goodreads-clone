@@ -58,9 +58,9 @@ class BooksController < ApplicationController
 
   def favorite
     if params[:favorite] == 'yes'
-      FavoriteBook.create(user_id: current_user.id, book_id: @book.id, favorite: true)
+      FavoriteBook.create(user: current_user, book: @book, favorite: true)
     else
-      FavoriteBook.update(user_id: current_user.id, book_id: @book.id, favorite: false)
+      FavoriteBook.update(user: current_user, book: @book, favorite: false)
     end
   end
 

@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -12,62 +10,62 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_180_622_122_705) do
-  create_table 'books', force: :cascade do |t|
-    t.string 'title'
-    t.string 'author'
-    t.string 'genre'
-    t.string 'description'
-    t.integer 'rating'
-    t.text 'review'
-    t.boolean 'to_read'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.integer 'user_id'
-    t.string 'cover'
+ActiveRecord::Schema.define(version: 2018_06_24_204135) do
+
+  create_table "books", force: :cascade do |t|
+    t.string "title"
+    t.string "author"
+    t.string "genre"
+    t.string "description"
+    t.integer "rating"
+    t.text "review"
+    t.boolean "to_read"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.string "cover"
   end
 
-  create_table 'favorite_books', force: :cascade do |t|
-    t.integer 'user_id'
-    t.integer 'book_id'
-    t.boolean 'favorite'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.index ['book_id'], name: 'index_favorite_books_on_book_id'
-    t.index ['user_id'], name: 'index_favorite_books_on_user_id'
+  create_table "favorite_books", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "book_id"
+    t.boolean "favorite"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["book_id"], name: "index_favorite_books_on_book_id"
+    t.index ["user_id"], name: "index_favorite_books_on_user_id"
   end
 
-  create_table 'reviews', force: :cascade do |t|
-    t.string 'reviewer'
-    t.string 'reviewed_book'
-    t.text 'text'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
+  create_table "reviews", force: :cascade do |t|
+    t.string "reviewer"
+    t.string "reviewed_book"
+    t.text "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table 'users', force: :cascade do |t|
-    t.string 'email', default: '', null: false
-    t.string 'encrypted_password', default: '', null: false
-    t.string 'reset_password_token'
-    t.datetime 'reset_password_sent_at'
-    t.datetime 'remember_created_at'
-    t.integer 'sign_in_count', default: 0, null: false
-    t.datetime 'current_sign_in_at'
-    t.datetime 'last_sign_in_at'
-    t.string 'current_sign_in_ip'
-    t.string 'last_sign_in_ip'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.string 'confirmation_token'
-    t.datetime 'confirmed_at'
-    t.time 'confirmation_sent_at'
-    t.string 'provider'
-    t.string 'uid'
-    t.string 'name'
-    t.string 'image'
-    t.integer 'favorite_book_id'
-    t.index ['email'], name: 'index_users_on_email', unique: true
-    t.index ['favorite_book_id'], name: 'index_users_on_favorite_book_id'
-    t.index ['reset_password_token'], name: 'index_users_on_reset_password_token', unique: true
+  create_table "users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string "current_sign_in_ip"
+    t.string "last_sign_in_ip"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string "provider"
+    t.string "uid"
+    t.string "name"
+    t.string "image"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
+
 end

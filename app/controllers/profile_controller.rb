@@ -4,6 +4,6 @@ class ProfileController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @favorite_books = Book.joins(:favorite_books)
+    @favorite_books = current_user.books.distinct
   end
 end

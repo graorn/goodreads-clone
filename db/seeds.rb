@@ -10,14 +10,14 @@
 
 require 'ffaker'
 
-User.create!(
+User.create(
   name: 'test',
   email: 'test@mail.com',
   password: 123_123
 )
 
 20.times do
-  Book.create!(
+  Book.create(
     title: FFaker::Book.title,
     author: FFaker::Book.author,
     cover: FFaker::Book.orly_cover,
@@ -31,3 +31,15 @@ User.create!(
     user_id: 1
   )
 end
+
+FavoriteBook.create(
+  user_id: 1,
+  book_id: 1,
+  favorite: true
+)
+
+FavoriteBook.create(
+user_id: 1,
+book_id: 2,
+favorite: true
+)
