@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_24_204135) do
+ActiveRecord::Schema.define(version: 2018_06_25_115342) do
 
   create_table "books", force: :cascade do |t|
     t.string "title"
@@ -29,7 +29,6 @@ ActiveRecord::Schema.define(version: 2018_06_24_204135) do
   create_table "favorite_books", force: :cascade do |t|
     t.integer "user_id"
     t.integer "book_id"
-    t.boolean "favorite"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["book_id"], name: "index_favorite_books_on_book_id"

@@ -2,19 +2,20 @@
 
 
 <div class="row">
-  <% @favorite_books.each do |book| %>
+  <% @favorite_books.each do |favorite_book| %>
 
     <div class="col col-xs-6 col-md-3 col-lg-2">
       <div class="card mb-5">
-        <%= link_to(image_tag(book.cover, class: 'img-fluid'), book) %>
+        <%= link_to(image_tag(favorite_book.cover, class: 'img-fluid'), favorite_book) %>
 
         <div class="card-body">
-          <h5 class="card-title">  <%= book.title %> </h5>
-          <p> <%= book.author %> </p>
+          <h5 class="card-title">  <%= favorite_book.title %> </h5>
+          <p> <%= favorite_book.author %> </p>
 
-          <p class="card-text"> <%= truncate(book.description, length: 100) %> </p>
+          <p class="card-text"> <%= truncate(favorite_book.description, length: 100) %> </p>
 
-          <%= link_to 'More', book, class: 'btn btn-primary d-block center-block' %>
+          <%= link_to 'More', favorite_book, class: 'btn btn-primary center-block' %>
+
         </div>
       </div>
 

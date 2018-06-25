@@ -12,22 +12,21 @@
 
 <div class="row">
 
-
   <% @books.each do |book| %>
 
-    <div class="col col-xs-3 col-md-4 col-lg-6 col-xl-12">
+    <div class="col col-xs-3 col-md-4 col-lg-6 col-xl-4">
 
       <div class="card mb-5 border border-dark rounded shadow-lg">
-        <%= link_to(image_tag(book.cover, class: 'img-fluid border border-dark rounded'), book) %>
+        <%= link_to(image_tag(book.cover, class: 'img-fluid border border-dark rounded'), book, class: 'm-auto pt-1') %>
 
-        <div class="card-body">
-          <h5 class="card-title">  <%= book.title %> </h5>
-          <p> <%= book.author %> </p>
+        <div class="card-body text-center">
+          <h1 class="card-title">  <%= book.title %> </h1>
+          <h2> <%= book.author %> </h2>
 
           <p class="card-text"> <%= truncate(book.description, length: 100) %> </p>
 
           <%= link_to 'Show', book, class: 'btn btn-primary' %>
-          <%= link_to 'Add as Favorite', favorite_book_path(book, favorite: 'yes'), remote: true, method: :post, id: "book-#{book.id}", class: 'btn btn-primary' %>
+
         </div>
       </div>
 

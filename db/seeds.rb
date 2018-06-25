@@ -16,6 +16,12 @@ User.create(
   password: 123_123
 )
 
+User.create(
+  name: 'test2',
+  email: 'test2@mail.com',
+  password: 123_123
+)
+
 20.times do
   Book.create(
     title: FFaker::Book.title,
@@ -39,7 +45,7 @@ FavoriteBook.create(
 )
 
 FavoriteBook.create(
-user_id: 1,
-book_id: 2,
-favorite: true
+  user_id: 1,
+  book_id: 2,
+  favorite: true
 )

@@ -6,4 +6,5 @@ class ProfileController < ApplicationController
   def index
     @favorite_books = current_user.books.distinct
   end
+
 end

@@ -36,4 +36,5 @@
 </p>
 
 <%= link_to 'Edit', edit_book_path(@book) %> |
-<%= link_to 'Back', books_path %>
+<%= link_to favorite_text, favorite_books_update_path(book: @book), id: "favorite_link", class: 'btn btn-primary', remote: true %>
+<%= link_to 'Back', profile_index_path %>
