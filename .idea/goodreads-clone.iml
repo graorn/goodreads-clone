@@ -49,6 +49,7 @@
     <orderEntry type="library" scope="PROVIDED" name="byebug (v10.0.2, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="capybara (v3.2.1, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="code_analyzer (v0.4.8, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="codemirror-rails (v5.16.0, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="coderay (v1.1.2, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="coffee-rails (v4.2.2, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="coffee-script (v2.4.1, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
@@ -86,6 +87,10 @@
     <orderEntry type="library" scope="PROVIDED" name="jquery-rails (v4.3.3, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="json (v2.1.0, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="jwt (v1.5.6, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="kaminari (v1.1.1, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="kaminari-actionview (v1.1.1, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="kaminari-activerecord (v1.1.1, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="kaminari-core (v1.1.1, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="launchy (v2.4.3, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="listen (v3.1.5, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="loofah (v2.2.2, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
@@ -128,6 +133,7 @@
     <orderEntry type="library" scope="PROVIDED" name="rails-dom-testing (v2.0.3, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rails-html-sanitizer (v1.0.4, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rails_best_practices (v1.19.2, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rails_db (v2.0.2, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="railties (v5.2.0, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rainbow (v3.0.0, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rake (v12.3.1, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
@@ -159,6 +165,7 @@
     <orderEntry type="library" scope="PROVIDED" name="sprockets-rails (v3.2.1, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sqlite3 (v1.3.13, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="switch_user (v1.5.0, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="terminal-table (v1.8.0, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="thor (v0.20.0, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="thread_safe (v0.3.6, RVM: ruby-2.5.1 (1)) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="tilt (v2.0.8, RVM: ruby-2.5.1 (1)) [gem]" level="application" />

@@ -8,9 +8,8 @@ class CreateBooks < ActiveRecord::Migration[5.2]
       t.string :genre
       t.string :description
       t.integer :rating
-      t.text :review
-      t.boolean :favorite
       t.boolean :to_read
+      t.string :cover
 
       t.timestamps
     end

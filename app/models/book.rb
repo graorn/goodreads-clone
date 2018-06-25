@@ -18,8 +18,11 @@
 #  cover       :string
 
 class Book < ApplicationRecord
-  has_many :favorite_books
-  has_many :users, through: :favorite_books
+  # has_many :favorite_books
+  # has_many :users, through: :favorite_books
+
+  has_many :reviews, as: :reviewable
+
 
   validates_presence_of :title
   validates_presence_of :author

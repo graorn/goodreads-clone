@@ -30,7 +30,6 @@ User.create(
     genre: FFaker::Book.genre,
     description: FFaker::Book.description,
     rating: rand(1..5),
-    review: FFaker::BaconIpsum.paragraphs,
     to_read: FFaker::Boolean.maybe,
     created_at: 7.days.ago,
     updated_at: 2.days.ago,
@@ -41,11 +40,9 @@ end
 FavoriteBook.create(
   user_id: 1,
   book_id: 1,
-  favorite: true
 )
 
 FavoriteBook.create(
   user_id: 1,
   book_id: 2,
-  favorite: true
 )

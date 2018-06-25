@@ -1,6 +1,10 @@
 <h1>Favorite books</h1>
 
 
+<% if @favorite_books.empty? %>
+  <p>No favorite books yet!</p>
+<% end %>
+
 <div class="row">
   <% @favorite_books.each do |favorite_book| %>
 

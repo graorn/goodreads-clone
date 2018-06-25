@@ -28,7 +28,6 @@ FactoryBot.define do
     cover FFaker::Book.cover
     description FFaker::Book.description
     rating 1..5
-    review FFaker::BaconIpsum.paragraphs
     favorite FFaker::Boolean.random
     to_read FFaker::Boolean.maybe
     created_at 7.days.ago

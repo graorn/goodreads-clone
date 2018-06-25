@@ -12,7 +12,6 @@ class BooksController < ApplicationController
 
   def show
     @favorite_exists = FavoriteBook.where(book: @book, user: current_user) == [] ? false : true
-
   end
 
   def new
