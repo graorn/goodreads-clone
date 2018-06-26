@@ -1,5 +1,8 @@
 require: rubocop-rspec
 
+AllCops:
+  TargetRubyVersion: 2.5
+
 inherit_gem:
   rubocop-rails:
     - config/rails.yml

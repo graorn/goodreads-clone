@@ -22,6 +22,7 @@ gem "pundit"
 gem "ransack"
 gem "responders"
 gem "simple_form"
+gem "simplecov", require: false, group: :test
 
 group :development, :test do
   gem "byebug", platforms: %i[mri mingw x64_mingw]
