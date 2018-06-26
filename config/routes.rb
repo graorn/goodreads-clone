@@ -9,6 +9,8 @@ Rails.application.routes.draw do
     collection do
       match 'search' => 'books#search', via: %i[get post], as: :search
     end
+
+    resources :reviews
   end
 
   resources :profile
