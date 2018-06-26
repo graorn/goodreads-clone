@@ -13,8 +13,7 @@ User.create(
   password: 123_123
 )
 
-User.create(
-    name: "admin",
+Admin.create!(
     email: "admin@mail.com",
     password: 123_123
 )
