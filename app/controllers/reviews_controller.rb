@@ -1,12 +1,11 @@
 # frozen_string_literal: true
 
 class ReviewsController < ApplicationController
-  before_action :set_review, only: %i[show edit update destroy favorite]
+  before_action :set_book
+  before_action :set_review
 
 
   def index
-    @book = Book.find(params[:book_id])
-    @reviews = Review.where(book: @book)
   end
 
   def show
@@ -17,37 +16,42 @@ class ReviewsController < ApplicationController
   end
 
 
-  def edit;
+  def edit
   end
 
   def create
+    # require 'byebug'; byebug
+    @review = Review.new(user: current_user, book: @book, body: params[:review][:body])
 
-    @review = Review.new(review_params)
 
     respond_to do |format|
       if @review.save
-        redirect_to root_path, notice: "Book was successfully created."
+        format.html { redirect_to @book, notice: "Book was successfully created." }
       else
-        format.html {render :new}
+
+        format.html { render :new }
+        format.json { render json: @book.errors, status: :unprocessable_entity }
       end
     end
   end
 
   def update
-
   end
 
   def destroy
-
   end
 
   private
 
-  def set_review
-    @review = Review.find(params[:id])
-  end
+    def set_book
+      @book = Book.find(params[:book_id])
+    end
 
-  def review_params
-    params.require(:review).permit(:body, :book)
-  end
+    def set_review
+      @reviews = Review.where(book: @book)
+    end
+
+    def review_params
+      params.require(:review).permit(:body, :book, :user)
+    end
 end
