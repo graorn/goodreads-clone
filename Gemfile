@@ -34,6 +34,8 @@ group :development, :test do
   gem "rspec-rails", "~> 3.5"
   gem "rubocop-rails"
   gem "sqlite3"
+    gem "switch_user"
+
 end
 
 group :development do
@@ -45,7 +47,6 @@ group :development do
   gem "rails_db", "2.0.2"
   gem "spring"
   gem "spring-watcher-listen", "~> 2.0.0"
-  gem "switch_user"
   gem "web-console", ">= 3.3.0"
   gem "rubocop-rails"
 end
