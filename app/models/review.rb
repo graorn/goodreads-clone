@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: reviews
@@ -12,5 +13,6 @@
 #
 
 class Review < ApplicationRecord
-  belongs_to :reviewable, polymorphic: true
+  belongs_to :user
+  belongs_to :book
 end

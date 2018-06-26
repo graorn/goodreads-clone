@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe HomeController do
   let(:user) { instance_double(User) }
 
   before { log_in(user) }
 
-  describe 'GET #index' do
-    it 'returns status ok' do
+  describe "GET #index" do
+    it "returns status ok" do
       get :index
 
       expect(response.status).to be(200)

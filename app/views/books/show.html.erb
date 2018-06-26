@@ -38,7 +38,12 @@
 <div class="btn-group">
   <%= link_to 'Edit', edit_book_path(@book), class: 'btn btn-primary' %>
   <%= link_to favorite_text, favorite_books_update_path(book: @book), id: "favorite_link", class: 'btn btn-primary', remote: true %>
-  <%= link_to 'Write review', new_review_path, class: 'btn btn-primary' %>
   <%= link_to 'Back', profile_index_path, class: 'btn btn-primary' %>
 </div>
 
+
+<h2>Reviews: </h2>
+
+<% @reviews.each do |review| %>
+  <p> <%= review.body %> </p>
+<% end %>

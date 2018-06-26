@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-guard 'livereload' do
+guard "livereload" do
   extensions = {
     css: :css,
     scss: :css,
@@ -97,6 +97,6 @@ end
 #   end
 # end
 
-guard 'annotate' do
-  watch('db/schema.rb')
+guard "annotate" do
+  watch("db/schema.rb")
 end

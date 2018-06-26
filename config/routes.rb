@@ -11,8 +11,5 @@ Rails.application.routes.draw do
     end
   end
 
-
-
-  resources :reviews
   resources :profile
 end

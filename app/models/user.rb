@@ -27,10 +27,11 @@
 #
 
 class User < ApplicationRecord
-  # has_many :favorite_books
-  # has_many :books, through: :favorite_books
+  has_many :favorite_books
+  has_many :books, through: :favorite_books
 
-  has_many :reviews, as: :reviewable
+  has_many :reviews
+
 
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, omniauth_providers: %i[facebook]

@@ -26,7 +26,7 @@
 #  image                  :string
 #
 
-require 'ffaker'
+require "ffaker"
 
 FactoryBot.define do
   factory :user do
