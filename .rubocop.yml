@@ -1,6 +1,13 @@
+require: rubocop-rspec
+
 inherit_gem:
   rubocop-rails:
     - config/rails.yml
 
 Metrics/LineLength:
   Max: 100
+
+AllCops:
+  Exclude:
+    - 'config/initializers/**/*'
+    - 'bin/**/*'

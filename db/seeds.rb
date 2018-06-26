@@ -14,8 +14,8 @@ User.create(
 )
 
 Admin.create!(
-    email: "admin@mail.com",
-    password: 123_123
+  email: "admin@mail.com",
+  password: 123_123
 )
 
 20.times do
