@@ -13,6 +13,12 @@ User.create(
   password: 123_123
 )
 
+User.create(
+    name: "admin",
+    email: "admin@mail.com",
+    password: 123_123
+)
+
 20.times do
   Book.create(
     title: FFaker::Book.title,
