@@ -15,8 +15,8 @@ class BooksController < ApplicationController
   end
 
   def show
-    @favorite_exists = FavoriteBook.where(book: @book, user: current_user) != []
-    @reviews = @book.reviews
+    @favorite_exists = UserBook.where(book: @book, user: current_user, favorite: true) != []
+    @reviews = UserBook.where(book: @book, user: current_user)
 
     respond_to do |format|
       format.json { render json: @book }
@@ -88,6 +88,6 @@ class BooksController < ApplicationController
 
     def book_params
       params.require(:book).permit(
-        :title, :author, :genre, :description, :rating, :review, :favorite, :to_read)
+        :title, :author, :genre, :description)
     end
 end

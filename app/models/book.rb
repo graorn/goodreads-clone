@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: books
@@ -14,11 +15,9 @@
 #
 
 class Book < ApplicationRecord
-  has_many :favorite_books
-  has_many :users, through: :favorite_books
+  has_many :user_books
+  has_many :users, through: :user_books
 
-  has_many :reviews
-  has_many :users, through: :reviews
 
   validates_presence_of :title
   validates_presence_of :author

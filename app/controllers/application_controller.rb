@@ -12,5 +12,5 @@ class ApplicationController < ActionController::Base
 
 
 
-  helper_method :favorite_text
+  helper_method :favorite_text, :to_read_text
 end

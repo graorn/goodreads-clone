@@ -15,25 +15,6 @@
   <%= @book.genre %>
 </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @book.description %>
-</p>
-
-<p>
-  <strong>Rating:</strong>
-  <%= @book.rating %>
-</p>
-
-<p>
-  <strong>Review:</strong>
-  <%= @book.review %>
-</p>
-
-<p>
-  <strong>To read:</strong>
-  <%= @book.to_read %>
-</p>
 
 <div class="btn-group">
   <%= link_to 'Edit', edit_book_path(@book), class: 'btn btn-primary' %>
@@ -50,5 +31,5 @@
 
   <h3>By: <%= review.user.name %> </h3>
 
-  <p> --> <%= review.body %> </p>
+  <p> --> <%= review.review %> </p>
 <% end %>

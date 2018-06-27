@@ -17,9 +17,7 @@ User.create(
 
 Admin.create!(
   email: "admin@mail.com",
-  password: 123_123,
-  image: FFaker::Avatar.image
-
+  password: 123_123
 )
 
 20.times do
@@ -38,8 +36,8 @@ end
   UserBook.create(
     user_id: rand(1..2),
     book_id: rand(1..20),
-    to_read: FFaker::Boolean.maybe,
-    favorite: FFaker::Boolean.random,
+    to_read: FFaker::Boolean.sample,
+    favorite: FFaker::Boolean.sample,
     review: FFaker::BaconIpsum.paragraphs,
     rating: rand(1..5),
 
