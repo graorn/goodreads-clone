@@ -38,10 +38,10 @@ RSpec.describe BooksController, type: :controller do
   # This should return the minimal set of attributes required to create a valid
   # Book. As you add validations to Book, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) do {title: 'a', author: 'b'} end
+  let(:valid_attributes) do { title: "a", author: "b" } end
 
   let(:invalid_attributes) do
-    {title: nil, author: nil}  
+    { title: nil, author: nil }
   end
 
   # This should return the minimal set of values that should be in the session
@@ -58,9 +58,9 @@ RSpec.describe BooksController, type: :controller do
 
   describe "GET #show" do
     it "returns a success response" do
-      book = Book.create(title: 'a', author: 'b')
+      book = Book.create(title: "a", author: "b")
 
-      get :show, params: {id: book.to_param}, session: {}
+      get :show, params: { id: book.to_param }, session: {}
       expect(response).to have_http_status(:ok)
 
     end
@@ -75,7 +75,7 @@ RSpec.describe BooksController, type: :controller do
 
   describe "GET #edit" do
     it "returns a success response" do
-      book = Book.create(title: 'a', author: 'b')
+      book = Book.create(title: "a", author: "b")
 
       get :edit, params: { id: book.to_param }
       expect(response).to have_http_status(:ok)
@@ -107,14 +107,14 @@ RSpec.describe BooksController, type: :controller do
   describe "PUT #update" do
     context "with valid params" do
       let(:new_attributes) do
-        {title: 'aa', author: 'bb'}
+        { title: "aa", author: "bb" }
       end
 
       it "updates the requested book" do
         book = Book.create! valid_attributes
         put :update, params: { id: book.to_param, book: new_attributes }
         book.reload
-        expect(book.title).to eq('aa')
+        expect(book.title).to eq("aa")
       end
 
       it "redirects to the book" do

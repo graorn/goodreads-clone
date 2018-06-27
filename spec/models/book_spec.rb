@@ -4,7 +4,7 @@ require "rails_helper"
 
 RSpec.describe Book, type: :model do
   let(:user) { User.new }
-  let(:review) {Review.new}
+  let(:review) { Review.new }
 
   subject do
     described_class.new title: "Test Title", author: "Test author"
