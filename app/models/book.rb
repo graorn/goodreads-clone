@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 # == Schema Information
 #
 # Table name: books
@@ -9,17 +8,22 @@
 #  author      :string
 #  genre       :string
 #  description :string
-#  rating      :integer
-#  review      :text
-#  to_read     :boolean
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
-#  user_id     :integer
 #  cover       :string
+#
 
 class Book < ApplicationRecord
+  has_many :favorite_books
+  has_many :users, through: :favorite_books
+
   has_many :reviews
+  has_many :users, through: :reviews
 
   validates_presence_of :title
   validates_presence_of :author
+
+
+  def favorite_books
+  end
 end

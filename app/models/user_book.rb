@@ -2,19 +2,20 @@
 
 # == Schema Information
 #
-# Table name: reviews
+# Table name: user_books
 #
 #  id         :integer          not null, primary key
-#  user_id    :integer
-#  book_id    :integer
-#  body       :text
+#  user_id    :integer          not null
+#  book_id    :integer          not null
+#  review     :text
+#  favorite   :boolean
+#  rating     :integer
+#  to_read    :boolean
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 
-class Review < ApplicationRecord
+class UserBook < ApplicationRecord
   belongs_to :user
   belongs_to :book
-
-  validates_presence_of :body, :user, :book
 end

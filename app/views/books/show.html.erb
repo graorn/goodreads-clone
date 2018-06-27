@@ -39,6 +39,7 @@
   <%= link_to 'Edit', edit_book_path(@book), class: 'btn btn-primary' %>
   <%= link_to favorite_text, favorite_books_update_path(book: @book), id: "favorite_link", class: 'btn btn-primary', remote: true %>
   <%= link_to 'Add review', new_book_review_path(@book), class: 'btn btn-primary' %>
+  <%= link_to 'Add to read list', to_read_list_path(@book), id: "to_read_link", remote: true, class: 'btn btn-primary' %>
   <%= link_to 'Back', profile_index_path, class: 'btn btn-primary' %>
 </div>
 

@@ -2,7 +2,7 @@
 
 # == Schema Information
 #
-# Table name: favorite_books
+# Table name: to_read_lists
 #
 #  id         :integer          not null, primary key
 #  user_id    :integer
@@ -11,7 +11,9 @@
 #  updated_at :datetime         not null
 #
 
-class FavoriteBook < ApplicationRecord
-  belongs_to :user
-  belongs_to :book
+FactoryBot.define do
+  factory :to_read_list do
+    user nil
+    book nil
+  end
 end
