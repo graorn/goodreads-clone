@@ -26,8 +26,8 @@ require "rails_helper"
 # `rails-controller-testing` gem.
 
 RSpec.describe BooksController, type: :controller do
-  let(:user) { instance_double(User) }
-  let(:book) { instance_double(Book) }
+  let(:user) { build(User) }
+  let(:book) { FactoryBot.create(:book) }
 
   subject do
     described_class.new :book
@@ -38,12 +38,10 @@ RSpec.describe BooksController, type: :controller do
   # This should return the minimal set of attributes required to create a valid
   # Book. As you add validations to Book, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) do
-    skip("Add a hash of attributes valid for your model")
-  end
+  let(:valid_attributes) do {title: 'a', author: 'b'} end
 
   let(:invalid_attributes) do
-    skip("Add a hash of attributes invalid for your model")
+    {title: nil, author: nil}  
   end
 
   # This should return the minimal set of values that should be in the session
@@ -54,29 +52,33 @@ RSpec.describe BooksController, type: :controller do
   describe "GET #index" do
     it "returns a success response" do
       get :index
-      expect(response).to be_success
+      expect(response).to have_http_status(:ok)
     end
   end
 
   describe "GET #show" do
     it "returns a success response" do
-      get :show, params: { id: 1 }
-      expect(response).to be_success
+      book = Book.create(title: 'a', author: 'b')
+
+      get :show, params: {id: book.to_param}, session: {}
+      expect(response).to have_http_status(:ok)
+
     end
   end
 
   describe "GET #new" do
     it "returns a success response" do
-      get :new, params: {}, session: valid_session
-      expect(response).to be_success
+      get :new
+      expect(response).to have_http_status(:ok)
     end
   end
 
   describe "GET #edit" do
     it "returns a success response" do
-      book = Book.create! valid_attributes
-      get :edit, params: { id: book.to_param }, session: valid_session
-      expect(response).to be_success
+      book = Book.create(title: 'a', author: 'b')
+
+      get :edit, params: { id: book.to_param }
+      expect(response).to have_http_status(:ok)
     end
   end
 
@@ -84,7 +86,7 @@ RSpec.describe BooksController, type: :controller do
     context "with valid params" do
       it "creates a new Book" do
         expect do
-          post :create, params: { book: valid_attributes }, session: valid_session
+          post :create, params: { book: valid_attributes }
         end.to change(Book, :count).by(1)
       end
 
@@ -105,19 +107,19 @@ RSpec.describe BooksController, type: :controller do
   describe "PUT #update" do
     context "with valid params" do
       let(:new_attributes) do
-        skip("Add a hash of attributes valid for your model")
+        {title: 'aa', author: 'bb'}
       end
 
       it "updates the requested book" do
         book = Book.create! valid_attributes
-        put :update, params: { id: book.to_param, book: new_attributes }, session: valid_session
+        put :update, params: { id: book.to_param, book: new_attributes }
         book.reload
-        skip("Add assertions for updated state")
+        expect(book.title).to eq('aa')
       end
 
       it "redirects to the book" do
         book = Book.create! valid_attributes
-        put :update, params: { id: book.to_param, book: valid_attributes }, session: valid_session
+        put :update, params: { id: book.to_param, book: valid_attributes }
         expect(response).to redirect_to(book)
       end
     end

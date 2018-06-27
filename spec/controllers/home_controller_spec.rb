@@ -11,7 +11,13 @@ RSpec.describe HomeController do
     it "returns status ok" do
       get :index
 
-      expect(response.status).to be(200)
-    end
+      expect(response).to have_http_status(:ok)
+     end
+
+     it "renders index view" do
+      get :index
+
+      expect(response).to render_template(:index)
+     end
   end
 end

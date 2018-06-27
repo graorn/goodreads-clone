@@ -4,9 +4,10 @@ require "rails_helper"
 
 RSpec.describe Book, type: :model do
   let(:user) { User.new }
+  let(:review) {Review.new}
 
   subject do
-    described_class.new title: "Test Title", author: "Test author", user: user
+    described_class.new title: "Test Title", author: "Test author"
   end
 
   it "is valid with valid attributes" do
@@ -24,8 +25,6 @@ RSpec.describe Book, type: :model do
   end
 
   describe "Associations" do
-    it "belongs to a user" do
-      should belong_to(:user)
-    end
+    it { should have_many(:reviews) }
   end
 end

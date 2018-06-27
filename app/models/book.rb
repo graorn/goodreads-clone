@@ -20,7 +20,6 @@
 class Book < ApplicationRecord
   has_many :reviews
 
-
   validates_presence_of :title
   validates_presence_of :author
 end

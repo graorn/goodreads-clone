@@ -44,8 +44,8 @@ RSpec.describe ReviewsController, type: :controller do
 
   describe "GET #index" do
     it "returns a success response" do
-      review = Review.create! valid_attributes
-      get :index, params: {}
+      review = Review.create
+      get :index
       expect(response).to be_success
     end
   end

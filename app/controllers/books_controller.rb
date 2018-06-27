@@ -20,6 +20,7 @@ class BooksController < ApplicationController
 
     respond_to do |format|
       format.json { render json: @book }
+      format.html
 
     end
   end
