@@ -27,9 +27,7 @@
 #
 
 class User < ApplicationRecord
-  has_many :user_books
-  has_many :books, through: :user_books
-
+  acts_as_favoritor
 
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable,
   :validatable, :omniauthable, omniauth_providers: %i[facebook]

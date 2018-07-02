@@ -1,14 +1,17 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  resources :to_read_lists
-  devise_for :admins
-  get "favorite_books/update"
   root to: "home#index"
-  devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
+
+  devise_for :admins
+
+  devise_for :users, controllers: {omniauth_callbacks: "users/omniauth_callbacks"}
 
   resources :books do
-    resources :reviews
+    member do
+      put "favorite", to: "books#favorite"
+      put "unfavorite", to: "books#unfavorite"
+    end
 
     collection do
       match "search" => "books#search", via: %i[get post], as: :search

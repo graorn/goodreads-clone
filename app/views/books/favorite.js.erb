@@ -1,0 +1,5 @@
+<% if current_user.favorited? @book %>
+    $("#favorite_link").text("Unfavorite")
+<% else %>
+$("#favorite_link").text("Favorite")
+<% end %>
