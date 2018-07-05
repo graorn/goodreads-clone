@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_02_093936) do
+ActiveRecord::Schema.define(version: 2018_07_05_100808) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -34,18 +34,11 @@ ActiveRecord::Schema.define(version: 2018_07_02_093936) do
     t.string "author"
     t.string "genre"
     t.string "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer "rating"
+    t.boolean "to_read"
     t.string "cover"
-  end
-
-  create_table "favorite_books", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "book_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["book_id"], name: "index_favorite_books_on_book_id"
-    t.index ["user_id"], name: "index_favorite_books_on_user_id"
   end
 
   create_table "favorites", force: :cascade do |t|
@@ -66,35 +59,20 @@ ActiveRecord::Schema.define(version: 2018_07_02_093936) do
   end
 
   create_table "reviews", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "book_id"
+    t.string "reviewable_type"
+    t.integer "reviewable_id"
+    t.string "reviewer_type"
+    t.integer "reviewer_id"
+    t.integer "rating"
     t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["book_id"], name: "index_reviews_on_book_id"
-    t.index ["user_id"], name: "index_reviews_on_user_id"
-  end
-
-  create_table "to_read_lists", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "book_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["book_id"], name: "index_to_read_lists_on_book_id"
-    t.index ["user_id"], name: "index_to_read_lists_on_user_id"
-  end
-
-  create_table "user_books", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "book_id", null: false
-    t.text "review"
-    t.boolean "favorite"
-    t.integer "rating", limit: 5
-    t.boolean "to_read"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["book_id"], name: "index_user_books_on_book_id"
-    t.index ["user_id"], name: "index_user_books_on_user_id"
+    t.index ["reviewable_id", "reviewable_type"], name: "index_reviews_on_reviewable_id_and_reviewable_type"
+    t.index ["reviewable_type", "reviewable_id"], name: "index_reviews_on_reviewable_type_and_reviewable_id"
+    t.index ["reviewer_id", "reviewer_type"], name: "index_reviews_on_reviewer_id_and_reviewer_type"
+    t.index ["reviewer_id"], name: "index_reviews_on_reviewer_id"
+    t.index ["reviewer_type", "reviewer_id"], name: "index_reviews_on_reviewer_type_and_reviewer_id"
+    t.index ["reviewer_type"], name: "index_reviews_on_reviewer_type"
   end
 
   create_table "users", force: :cascade do |t|

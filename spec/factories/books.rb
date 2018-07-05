@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 # == Schema Information
 #
 # Table name: books
@@ -9,9 +8,11 @@
 #  author      :string
 #  genre       :string
 #  description :string
+#  rating      :integer
+#  to_read     :boolean
+#  cover       :string
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
-#  cover       :string
 #
 
 require "ffaker"

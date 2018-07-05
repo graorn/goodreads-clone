@@ -29,6 +29,9 @@
 class User < ApplicationRecord
   acts_as_favoritor
 
+  has_many :reviews, as:  :reviewable
+  has_many :reviewers, as: :reviewer
+
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable,
   :validatable, :omniauthable, omniauth_providers: %i[facebook]
 

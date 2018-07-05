@@ -7,7 +7,6 @@ class CreateBooks < ActiveRecord::Migration[5.2]
       t.string :author
       t.string :genre
       t.string :description
-      t.integer :rating
       t.boolean :to_read
       t.string :cover
 

@@ -31,15 +31,3 @@ Admin.create!(
     updated_at: 2.days.ago,
   )
 end
-
-20.times do
-  UserBook.create(
-    user_id: rand(1..2),
-    book_id: rand(1..20),
-    to_read: FFaker::Boolean.sample,
-    favorite: FFaker::Boolean.sample,
-    review: FFaker::BaconIpsum.paragraphs,
-    rating: rand(1..5),
-
-    )
-end
