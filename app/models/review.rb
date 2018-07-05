@@ -11,6 +11,7 @@
 #  reviewer_id     :integer
 #  rating          :integer
 #  body            :text
+#  title           :text
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #

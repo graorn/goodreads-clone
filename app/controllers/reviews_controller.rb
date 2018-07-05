@@ -7,16 +7,15 @@ class ReviewsController < ApplicationController
   end
 
   def create
-
     @book = Book.find(params[:book_id])
 
     @review = Review.new(
-        reviewable_id: params[:book_id],
-        reviewable_type: "Book",
-        reviewer_type: "User",
-        reviewer_id: current_user.id,
-        body: params[:review][:body],
-        rating: params[:review][:rating],)
+      reviewable_id: params[:book_id],
+      reviewable_type: "Book",
+      reviewer_type: "User",
+      reviewer_id: current_user.id,
+      body: params[:review][:body],
+      rating: params[:review][:rating],)
 
     if @review.save
       redirect_to book_path(@book), notice: "Created review"

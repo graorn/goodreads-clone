@@ -9,7 +9,6 @@
 #  author      :string
 #  genre       :string
 #  description :string
-#  rating      :integer
 #  to_read     :boolean
 #  cover       :string
 #  created_at  :datetime         not null

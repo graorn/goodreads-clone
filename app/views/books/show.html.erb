@@ -1,30 +1,33 @@
-<p id="notice"><%= notice %></p>
+<div class="col col-md-6 offset-md-3 text-center">
+  <%= image_tag @book.cover %>
 
-<p>
-  <strong>Title:</strong>
-  <%= @book.title %>
-</p>
+  <p>
+    <strong>Title:</strong>
+    <%= @book.title %>
+  </p>
 
-<p>
-  <strong>Author:</strong>
-  <%= @book.author %>
-</p>
+  <p>
+    <strong>Author:</strong>
+    <%= @book.author %>
+  </p>
 
-<p>
-  <strong>Genre:</strong>
-  <%= @book.genre %>
-</p>
+  <p>
+    <strong>Genre:</strong>
+    <%= @book.genre %>
+  </p>
 
 
-<div class="btn-group">
-  <%= link_to 'Edit', edit_book_path(@book), class: 'btn btn-primary' %>
+  <div class="btn-group">
+    <%= link_to 'Edit', edit_book_path(@book), class: 'btn btn-primary' %>
 
-  <%= link_to current_user.favorited?(@book) ? 'Unfavorite' : 'Favorite', favorite_book_path(@book), method: :put, id: "favorite_link", class: 'btn btn-primary',
-              remote: true %>
+    <%= link_to current_user.favorited?(@book) ? 'Unfavorite' : 'Favorite', favorite_book_path(@book), method: :put, id: "favorite_link", class: 'btn btn-primary',
+                remote: true %>
 
-  <%= link_to "Add review", new_book_review_path(@book), class: 'btn btn-primary' %>
+    <%= link_to "Add review", new_book_review_path(@book), class: 'btn btn-primary' %>
 
-  <%= link_to 'Back', profile_index_path, class: 'btn btn-primary' %>
+    <%= link_to 'Back', profile_index_path, class: 'btn btn-primary' %>
+  </div>
+  <hr>
 </div>
 
 
@@ -33,10 +36,14 @@
 
   <% @reviews.each do |review| %>
 
-    <p> <%= review.body  %> </p>
-    <p> <%= review.rating %> </p>
+      <div class="media my-1">
+        <img src="http://via.placeholder.com/64x64" alt="Generic placeholder image">
+        <div class="media-body ml-1">
+          <h5 class="mt-0"> <%= review.title %> </h5>
+          <%= review.body %> </div>
+      </div>
 
+    <hr>
   <% end %>
-
 
 <% end %>

@@ -13,3 +13,14 @@
  */
 
 @import "bootstrap";
+
+body {
+  background: #fff image-url("book1.jpg") no-repeat fixed center;
+  background-size: cover;
+}
+
+
+.media {
+  background-color: #2E2F30;
+  color: #fff;
+}

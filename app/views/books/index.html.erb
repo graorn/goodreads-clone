@@ -14,9 +14,9 @@
 
   <% @books.each do |book| %>
 
-    <div class="col col-xs-3 col-md-4 col-lg-6 col-xl-4">
+    <div class="col col-xs-3 col-md-4 col-lg-6 col-xl-4 ">
 
-      <div class="card mb-5 border border-dark rounded shadow-lg">
+      <div class="card mb-5">
         <%= link_to(image_tag(book.cover, class: 'img-fluid border border-dark rounded'), book, class: 'm-auto pt-1') %>
 
         <div class="card-body text-center">

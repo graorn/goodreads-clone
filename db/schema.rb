@@ -34,7 +34,6 @@ ActiveRecord::Schema.define(version: 2018_07_05_100808) do
     t.string "author"
     t.string "genre"
     t.string "description"
-    t.integer "rating"
     t.boolean "to_read"
     t.string "cover"
     t.datetime "created_at", null: false
@@ -65,6 +64,7 @@ ActiveRecord::Schema.define(version: 2018_07_05_100808) do
     t.integer "reviewer_id"
     t.integer "rating"
     t.text "body"
+    t.text "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["reviewable_id", "reviewable_type"], name: "index_reviews_on_reviewable_id_and_reviewable_type"
