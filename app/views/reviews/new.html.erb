@@ -1,0 +1,19 @@
+<%= simple_form_for([@book, @review]) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+
+  <div class="form-inputs">
+    <%= f.label :body, value: 'Review' %>
+    <%= f.text_area :body, label: 'Review', placeholder: 'Type review here', required: true %>
+
+    <%= f.label :rating, value: 'Rating' %>
+    <%= f.number_field :rating, label: 'rating', placeholder: 'Rating' %>
+  </div>
+
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+
+<% end %>

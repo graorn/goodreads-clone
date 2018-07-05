@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: favorites
@@ -14,15 +16,13 @@
 #
 
 class Favorite < ActiveRecord::Base
+  extend ActsAsFavoritor::FavoritorLib
+  extend ActsAsFavoritor::FavoriteScopes
 
-    extend ActsAsFavoritor::FavoritorLib
-    extend ActsAsFavoritor::FavoriteScopes
+  belongs_to :favoritable, polymorphic: true
+  belongs_to :favoritor, polymorphic: true
 
-    belongs_to :favoritable, polymorphic: true
-    belongs_to :favoritor, polymorphic: true
-
-    def block!
-        self.update_attributes blocked: true
-    end
-
+  def block!
+    self.update_attributes blocked: true
+  end
 end

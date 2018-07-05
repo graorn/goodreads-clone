@@ -1,27 +1,27 @@
 # frozen_string_literal: true
 
 describe Users::OmniauthCallbacksController do
-  describe '#facebook' do
+  describe "#facebook" do
     let(:oauth_params) do
-      { 'omniauth.auth' =>
-           { 'provider' => 'facebook',
-             'uid' => '1234',
-             'extra' => {
-               'user_hash' => { 'email' => 'ghost@nobody.com' }
+      { "omniauth.auth" =>
+           { "provider" => "facebook",
+             "uid" => "1234",
+             "extra" => {
+               "user_hash" => { "email" => "ghost@nobody.com" }
              } } }
     end
 
     before do
-      controller.request.env['omniauth.auth'] = oauth_params
+      controller.request.env["omniauth.auth"] = oauth_params
     end
 
-    it 'sends oauth request' do
+    it "sends oauth request" do
       expect(User).to receive(:from_omniauth).with(oauth_params)
 
       get :facebook
     end
 
-    context 'when user is persisted' do
+    context "when user is persisted" do
       let(:user) { double(User, id: 1, persisted?: true) }
 
       before do
@@ -31,7 +31,7 @@ describe Users::OmniauthCallbacksController do
       # redirects to bla bla...
     end
 
-    context 'when user is not persisted' do
+    context "when user is not persisted" do
       let(:user) { double(User, id: 1, persisted?: false) }
 
       before do

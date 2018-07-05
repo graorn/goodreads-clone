@@ -22,6 +22,21 @@
   <%= link_to current_user.favorited?(@book) ? 'Unfavorite' : 'Favorite', favorite_book_path(@book), method: :put, id: "favorite_link", class: 'btn btn-primary',
               remote: true %>
 
+  <%= link_to "Add review", new_book_review_path(@book), class: 'btn btn-primary' %>
+
   <%= link_to 'Back', profile_index_path, class: 'btn btn-primary' %>
 </div>
 
+
+
+<% unless @reviews.blank? %>
+
+  <% @reviews.each do |review| %>
+
+    <p> <%= review.body  %> </p>
+    <p> <%= review.rating %> </p>
+
+  <% end %>
+
+
+<% end %>

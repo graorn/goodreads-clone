@@ -2,17 +2,17 @@
 
 describe "books" do
 
-  context 'when not favorited' do
+  context "when not favorited" do
     it "can be put to favorites" do
       visit root_path
 
-      click_link 'Books'
+      click_link "Books"
 
-      click_link 'Show'
+      click_link "Show"
 
-      click_link 'Favorite'
+      click_link "Favorite"
 
-      expect(page).to have_content('Unfavorite')
+      expect(page).to have_content("Unfavorite")
     end
   end
 
@@ -20,5 +20,3 @@ describe "books" do
   it "can be rated"
   it "can have reviews"
 end
-
-

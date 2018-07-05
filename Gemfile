@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 source "https://rubygems.org"
-git_source(:github) {|repo| "https://github.com/#{repo}.git"}
+git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "2.5.1"
 
@@ -23,7 +23,7 @@ gem "ransack"
 gem "responders"
 gem "simple_form"
 gem "simplecov", require: false, group: :test
-gem 'acts_as_favoritor', github: 'jonhue/acts_as_favoritor'
+gem "acts_as_favoritor", github: "jonhue/acts_as_favoritor"
 
 group :development, :test do
   gem "byebug", platforms: %i[mri mingw x64_mingw]
@@ -52,7 +52,8 @@ group :development do
   gem "spring-watcher-listen", "~> 2.0.0"
   gem "web-console", ">= 3.3.0"
   gem "rails_apps_testing"
-
+  gem "better_errors"
+  gem "binding_of_caller"
 end
 
 group :production do
