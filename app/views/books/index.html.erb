@@ -10,15 +10,17 @@
   <strong>Title</strong>
 <% end %>
 
+<hr>
+
 <div class="row">
 
   <% @books.each do |book| %>
 
     <div class="col col-xs-3 col-md-4 col-lg-6 col-xl-4 ">
 
-      <div class="card mb-5">
-        <%= link_to(image_tag(book.cover, class: 'img-fluid border border-dark rounded'), book, class: 'm-auto pt-1') %>
+      <%= link_to(image_tag(book.cover, class: 'img-fluid border border-dark rounded d-flex justify-content-center my-1'), book, class: "d-flex justify-content-center") %>
 
+      <div class="card mb-5">
         <div class="card-body text-center">
           <h1 class="card-title">  <%= book.title %> </h1>
           <h2> <%= book.author %> </h2>
