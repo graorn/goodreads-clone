@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: reads
@@ -10,7 +12,6 @@
 #
 
 class Read < ApplicationRecord
-
   belongs_to :user
   belongs_to :book
 end

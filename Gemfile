@@ -26,7 +26,7 @@ gem "simplecov", require: false, group: :test
 gem "acts_as_favoritor", github: "jonhue/acts_as_favoritor"
 gem "ffaker"
 gem "google-cloud-storage", "~> 1.8", require: false
-gem 'jquery-validation-rails'
+gem "jquery-validation-rails"
 
 group :development, :test do
   gem "byebug", platforms: %i[mri mingw x64_mingw]
@@ -34,7 +34,7 @@ group :development, :test do
   gem "factory_bot_rails"
   gem "guard-annotate"
   gem "guard-rspec"
-  gem "rspec-rails", "~> 3.5"
+  gem "rspec-rails", "~> 3.7"
   gem "rubocop-rails"
   gem "sqlite3"
   gem "switch_user"
@@ -51,7 +51,7 @@ group :development do
   gem "spring"
   gem "spring-watcher-listen", "~> 2.0.0"
   gem "web-console", ">= 3.3.0"
-  gem "rails_apps_testing"
+  gem "rails_apps_testing", github: "RailsApps/rails_apps_testing"
   gem "better_errors"
   gem "binding_of_caller"
 end
