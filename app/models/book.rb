@@ -21,6 +21,9 @@ class Book < ApplicationRecord
   has_many :reviews, as: :reviewable
   has_many :reviewers, as: :reviewer
 
+  has_many :reads
+  has_many :users, through: :reads
+
 
   validates_presence_of :title
   validates_presence_of :author

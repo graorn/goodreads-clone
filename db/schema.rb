@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_05_100808) do
+ActiveRecord::Schema.define(version: 2018_07_09_102806) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -57,6 +57,15 @@ ActiveRecord::Schema.define(version: 2018_07_05_100808) do
     t.index ["scope"], name: "index_favorites_on_scope"
   end
 
+  create_table "reads", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "book_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["book_id"], name: "index_reads_on_book_id"
+    t.index ["user_id"], name: "index_reads_on_user_id"
+  end
+
   create_table "reviews", force: :cascade do |t|
     t.string "reviewable_type"
     t.integer "reviewable_id"
@@ -70,9 +79,7 @@ ActiveRecord::Schema.define(version: 2018_07_05_100808) do
     t.index ["reviewable_id", "reviewable_type"], name: "index_reviews_on_reviewable_id_and_reviewable_type"
     t.index ["reviewable_type", "reviewable_id"], name: "index_reviews_on_reviewable_type_and_reviewable_id"
     t.index ["reviewer_id", "reviewer_type"], name: "index_reviews_on_reviewer_id_and_reviewer_type"
-    t.index ["reviewer_id"], name: "index_reviews_on_reviewer_id"
     t.index ["reviewer_type", "reviewer_id"], name: "index_reviews_on_reviewer_type_and_reviewer_id"
-    t.index ["reviewer_type"], name: "index_reviews_on_reviewer_type"
   end
 
   create_table "users", force: :cascade do |t|

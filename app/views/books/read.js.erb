@@ -1,0 +1,5 @@
+<% if current_user.favorited? @book %>
+$("#read_link").text("Unfavorite").addClass("btn-success")
+<% else %>
+$("#read_link").text("Favorite").removeClass("btn-success")
+<% end %>

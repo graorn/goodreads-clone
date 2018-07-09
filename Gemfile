@@ -25,11 +25,11 @@ gem "simple_form"
 gem "simplecov", require: false, group: :test
 gem "acts_as_favoritor", github: "jonhue/acts_as_favoritor"
 gem "ffaker"
-
+gem "google-cloud-storage", "~> 1.8", require: false
+gem 'jquery-validation-rails'
 
 group :development, :test do
   gem "byebug", platforms: %i[mri mingw x64_mingw]
-  gem "capybara"
   gem "email_spec"
   gem "factory_bot_rails"
   gem "guard-annotate"

@@ -32,6 +32,11 @@ class User < ApplicationRecord
   has_many :reviews, as:  :reviewable
   has_many :reviewers, as: :reviewer
 
+  has_and_belongs_to_many :reads
+  has_many :books, through: :reads
+
+  has_one_attached :avatar
+
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable,
   :validatable, :omniauthable, omniauth_providers: %i[facebook]
 

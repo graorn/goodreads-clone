@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     member do
       put "favorite", to: "books#favorite"
       put "unfavorite", to: "books#unfavorite"
+      put "read", to: "books#read"
     end
 
     collection do

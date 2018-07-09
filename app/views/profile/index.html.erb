@@ -1,5 +1,5 @@
 <p>
-  <a class="btn btn-primary"  data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Favorite
+  <a class="btn btn-primary" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Favorite
     books</a>
   <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">To
     read
@@ -8,24 +8,14 @@
 <div class="row">
   <div class="col">
     <div class="collapse multi-collapse show" id="multiCollapseExample1">
+
       <% unless @favorited_books.blank? %>
         <h1>Favorite books</h1>
-
         <div class="row">
           <% @favorited_books.each do |favorite_book| %>
 
-            <div class="col col-xs-6 col-md-3 col-lg-2">
-              <div class="card mb-5">
-                <div class="card-body">
-                  <h5 class="card-title">  <%= favorite_book.title %> </h5>
-                  <p> <%= favorite_book.author %> </p>
-
-                  <p class="card-text"> <%= truncate(favorite_book.description, length: 100) %> </p>
-
-                  <%= link_to 'More', favorite_book, class: 'btn btn-primary center-block' %>
-
-                </div>
-              </div>
+            <div class="col col-md-4 mb-5">
+              <%= link_to image_tag(favorite_book.cover, class: "img-fluid img-thumbnail"), favorite_book %>
 
             </div>
           <% end %>
@@ -35,15 +25,16 @@
 
         <h1>No favorited books</h1>
 
-      <% end %>      </div>
+      <% end %>
+    </div>
   </div>
 </div>
 <div class="col">
   <div class="collapse multi-collapse" id="multiCollapseExample2">
-    <div class="card card-body">
-      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim
-      keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-    </div>
+    <% @readBooks.each do |book| %>
+      <h1><%= book.title %></h1>
+
+    <% end %>
   </div>
 </div>
 </div>

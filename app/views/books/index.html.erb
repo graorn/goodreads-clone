@@ -1,38 +1,43 @@
-<h1>Books</h1>
+<div class="row">
+  <div class="col">
+    <div class="card">
+      <div class="card-body">
+        <%= render 'books/search_form' %>
 
-<%= render 'books/search_form' %>
+        <%= sort_link(@q, :author, default_order: :asc) do %>
+          <strong>Author name</strong>
+        <% end %>
 
-<%= sort_link(@q, :author, default_order: :asc) do %>
-  <strong>Author name</strong>
-<% end %>
-
-<%= sort_link(@q, :title, default_order: :asc) do %>
-  <strong>Title</strong>
-<% end %>
+        <%= sort_link(@q, :title, default_order: :asc) do %>
+          <strong>Title</strong>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
 
 <hr>
+<% @books.each do |book| %>
+  <div class="row">
+    <div class="col-md-7">
+      <%= link_to book do  %>
+        <%= image_tag(book.cover, class: "img-fluid img-thumbnail") %>
+      <% end %>
+    </div>
+    <div class="col-md-5">
 
-<div class="row">
-
-  <% @books.each do |book| %>
-
-    <div class="col col-xs-3 col-md-4 col-lg-6 col-xl-4 ">
-
-      <%= link_to(image_tag(book.cover, class: 'img-fluid border border-dark rounded d-flex justify-content-center my-1'), book, class: "d-flex justify-content-center") %>
-
-      <div class="card mb-5">
-        <div class="card-body text-center">
-          <h1 class="card-title">  <%= book.title %> </h1>
-          <h2> <%= book.author %> </h2>
-
-          <p class="card-text"> <%= truncate(book.description, length: 100) %> </p>
-
-          <%= link_to 'Show', book, class: 'btn btn-primary' %>
-
+      <div class="card m-auto">
+        <div class="card-body">
+          <h3><%= book.title %></h3>
+          <h4><%= book.author %></h4>
+          <p><%= truncate(book.description, length: 100) %></p>
+          <%= link_to 'View Book', book, class: "btn btn-primary" %>
         </div>
       </div>
-
     </div>
+  </div>
 
-  <% end %>
+  <hr>
+
+<% end %>
 </div>
