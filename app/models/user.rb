@@ -27,18 +27,33 @@
 #
 
 class User < ApplicationRecord
+  before_save :normalize_email
   acts_as_favoritor
+
+
+  # Associations
 
   has_many :reviews, as: :reviewable
   has_many :reviewers, as: :reviewer
 
-  has_and_belongs_to_many :reads
+  has_many :reads
   has_many :books, through: :reads
 
   has_one_attached :avatar
 
+  # Validations
+
+  validates :password, presence: true
+  validates :email, uniqueness: {message: 'Duplicate email'}, presence: true
+
+
+  # Devise
+
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable,
          :validatable, :omniauthable, omniauth_providers: %i[facebook]
+
+
+  #Omniauth
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
@@ -56,4 +71,9 @@ class User < ApplicationRecord
       end
     end
   end
+
+  private
+    def normalize_email
+      self.email = self.email.downcase.strip
+    end
 end

@@ -26,10 +26,15 @@
 #  image                  :string
 #
 
+
+require 'ffaker'
+
 FactoryBot.define do
   factory :user do
-    name "Test User"
-    email "test@example.com"
-    password "please123"
+    name FFaker::Name.unique.name
+    sequence :email do |n|
+      "person#{n}@example.com"
+    end
+    password FFaker::Internet.unique.password
   end
 end

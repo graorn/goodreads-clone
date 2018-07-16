@@ -24,21 +24,22 @@ gem "responders"
 gem "simple_form"
 gem "simplecov", require: false, group: :test
 gem "acts_as_favoritor", github: "jonhue/acts_as_favoritor"
-gem "ffaker"
 gem "google-cloud-storage", "~> 1.8", require: false
 gem "jquery-validation-rails"
+gem "valid_email2"
 
 group :development, :test do
   gem "byebug", platforms: %i[mri mingw x64_mingw]
   gem "email_spec"
   gem "factory_bot_rails"
   gem "guard-annotate"
-  gem "guard-rspec"
+  gem "guard-rspec", require: false
   gem "rspec-rails", "~> 3.7"
   gem "rubocop-rails"
   gem "sqlite3"
   gem "switch_user"
   gem "rubocop-rspec"
+  gem 'fuubar'
 end
 
 group :development do
@@ -54,6 +55,7 @@ group :development do
   gem "rails_apps_testing", github: "RailsApps/rails_apps_testing"
   gem "better_errors"
   gem "binding_of_caller"
+  gem 'ffaker'
 end
 
 group :production do
@@ -64,7 +66,7 @@ group :test do
   gem "database_cleaner"
   gem "launchy"
   gem "rails-controller-testing"
-  gem "shoulda-matchers", "~> 3.1"
+  gem 'shoulda-matchers', '~> 3.1'
   gem "capybara"
   gem "selenium-webdriver"
 end

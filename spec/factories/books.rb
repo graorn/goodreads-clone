@@ -1,4 +1,3 @@
-# frozen_string_literal: true
 # == Schema Information
 #
 # Table name: books
@@ -14,18 +13,11 @@
 #  updated_at  :datetime         not null
 #
 
-class Book < ApplicationRecord
+require 'ffaker'
 
-
-  acts_as_favoritable
-
-  has_many :reviews, as: :reviewable
-  has_many :reviewers, as: :reviewer
-
-  has_many :reads
-  has_many :users, through: :reads
-
-
-  validates_presence_of :title
-  validates_presence_of :author
+FactoryBot.define do
+  factory :book do
+    title FFaker::Book.unique.title
+    author FFaker::Book.unique.author
+  end
 end

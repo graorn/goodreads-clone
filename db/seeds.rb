@@ -22,8 +22,8 @@ Admin.create!(
 
 20.times do
   Book.create!(
-    title: FFaker::Book.title,
-    author: FFaker::Book.author,
+    title: FFaker::Book.unique.title,
+    author: FFaker::Book.unique.author,
     cover: FFaker::Book.orly_cover,
     genre: FFaker::Book.genre,
     description: FFaker::Book.description,

@@ -21,15 +21,14 @@ Bundler.require(*Rails.groups)
 
 module GoodreadsClone
   class Application < Rails::Application
+
     config.generators do |g|
-      g.test_framework :rspec,
-        fixtures: true,
-        view_specs: false,
-        helper_specs: false,
-        routing_specs: false,
-        controller_specs: false,
-        request_specs: false
-      g.fixture_replacement :factory_bot, dir: "spec/factories"
+      g.orm :active_record
+      g.test_framework :rspec
+      g.stylesheet_engine :scss
+      g.scaffold_stylesheet = false
+      g.system_tests = false
+      g.fixture_replacement :factory_bot, dir: 'spec/factories'
     end
 
     # Initialize configuration defaults for originally generated Rails version.
@@ -40,7 +39,6 @@ module GoodreadsClone
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
 
-    # Don't generate system test files.
-    config.generators.system_tests = nil
+
   end
 end

@@ -1,4 +1,3 @@
-# frozen_string_literal: true
 # == Schema Information
 #
 # Table name: reads
@@ -8,7 +7,11 @@
 #  book_id :integer          not null
 #
 
-class Read < ApplicationRecord
-  belongs_to :user
-  belongs_to :book
+require 'ffaker'
+
+FactoryBot.define do
+  factory :read do
+    user
+    book
+  end
 end
