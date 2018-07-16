@@ -4,8 +4,8 @@
 # Table name: books
 #
 #  id          :integer          not null, primary key
-#  title       :string           not null
-#  author      :string           not null
+#  title       :string
+#  author      :string
 #  genre       :string
 #  description :string
 #  to_read     :boolean
@@ -15,8 +15,6 @@
 #
 
 class Book < ApplicationRecord
-
-
   acts_as_favoritable
 
   has_many :reviews, as: :reviewable

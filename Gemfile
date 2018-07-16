@@ -35,7 +35,7 @@ group :development, :test do
   gem "guard-annotate"
   gem "guard-rspec", require: false
   gem "rspec-rails", "~> 3.7"
-  gem "rubocop-rails"
+  gem "rubocop-rails_config"  
   gem "sqlite3"
   gem "switch_user"
   gem "rubocop-rspec"
