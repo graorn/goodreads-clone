@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ActsAsFavoritorMigration < ActiveRecord::Migration[5.2]
   def self.up
     create_table :favorites, force: true do |t|

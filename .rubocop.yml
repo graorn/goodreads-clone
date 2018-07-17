@@ -4,11 +4,11 @@ AllCops:
   TargetRubyVersion: 2.5
 
 inherit_gem:
-  rubocop-rails:
+  rubocop-rails_config:
     - config/rails.yml
 
 Metrics/LineLength:
-  Max: 100
+  Max: 120
 
 AllCops:
   Exclude:

@@ -35,11 +35,11 @@ group :development, :test do
   gem "guard-annotate"
   gem "guard-rspec", require: false
   gem "rspec-rails", "~> 3.7"
-  gem "rubocop-rails_config"  
+  gem "rubocop-rails_config"
   gem "sqlite3"
   gem "switch_user"
   gem "rubocop-rspec"
-  gem 'fuubar'
+  gem "fuubar"
 end
 
 group :development do
@@ -55,7 +55,7 @@ group :development do
   gem "rails_apps_testing", github: "RailsApps/rails_apps_testing"
   gem "better_errors"
   gem "binding_of_caller"
-  gem 'ffaker'
+  gem "ffaker"
 end
 
 group :production do
@@ -66,7 +66,7 @@ group :test do
   gem "database_cleaner"
   gem "launchy"
   gem "rails-controller-testing"
-  gem 'shoulda-matchers', '~> 3.1'
+  gem "shoulda-matchers", "~> 3.1"
   gem "capybara"
   gem "selenium-webdriver"
 end

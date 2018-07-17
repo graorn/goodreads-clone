@@ -44,7 +44,7 @@ class User < ApplicationRecord
   # Validations
 
   validates :password, presence: true
-  validates :email, uniqueness: {message: 'Duplicate email'}, presence: true
+  validates :email, uniqueness: { message: "Duplicate email" }, presence: true
 
 
   # Devise
@@ -53,7 +53,7 @@ class User < ApplicationRecord
          :validatable, :omniauthable, omniauth_providers: %i[facebook]
 
 
-  #Omniauth
+  # Omniauth
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|

@@ -27,7 +27,7 @@
 #
 
 
-require 'ffaker'
+require "ffaker"
 
 FactoryBot.define do
   factory :user do
@@ -35,6 +35,6 @@ FactoryBot.define do
     sequence :email do |n|
       "person#{n}@example.com"
     end
-    password FFaker::Internet.unique.password
+    password FFaker::Internet.unique.password(min_length = 6)
   end
 end

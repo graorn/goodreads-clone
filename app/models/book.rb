@@ -1,11 +1,12 @@
 # frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: books
 #
 #  id          :integer          not null, primary key
-#  title       :string
-#  author      :string
+#  title       :string           not null
+#  author      :string           not null
 #  genre       :string
 #  description :string
 #  to_read     :boolean

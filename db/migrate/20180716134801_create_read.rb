@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateRead < ActiveRecord::Migration[5.2]
   def change
     create_table :reads do |t|
