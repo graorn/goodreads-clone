@@ -33,10 +33,6 @@
 
           <%= link_to "Add review", new_book_review_path(@book), class: 'btn btn-primary' %>
 
-
-          <% reading = current_user.reading?(@book) ? 'btn-success' : 'btn-primary' %>
-          <%= link_to "Read", read_book_path(@book, user: current_user), method: :put, remote: true, class: "btn #{reading}" %>
-
         </div>
       </div>
     </div>
