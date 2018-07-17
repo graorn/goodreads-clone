@@ -82,14 +82,7 @@ class BooksController < ApplicationController
     current_user.remove_favorite @book
   end
 
-  def read
-    @read_list = current_user.reads.new(book: @book)
-
-    @read_list.save
-  end
-
   private
-
     def set_book
       @book = Book.find(params[:id])
     end

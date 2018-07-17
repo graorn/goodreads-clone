@@ -24,15 +24,18 @@
           <%= link_to 'Edit', edit_book_path(@book), class: 'btn btn-primary' %>
 
 
-          <% css_class = current_user.favorited?(@book) ? 'btn-success' : 'btn-primary'%>
+          <% favorited = current_user.favorited?(@book) ? 'btn-success' : 'btn-primary' %>
           <%= link_to current_user.favorited?(@book) ? 'Favorited' : 'Favorite',
-                                              favorite_book_path(@book), method: :put, id: "favorite_link",
-                      class: "btn #{css_class}", remote: true %>
+                      favorite_book_path(@book), method: :put, id: "favorite_link",
+                      class: "btn #{favorited}", remote: true %>
 
 
 
           <%= link_to "Add review", new_book_review_path(@book), class: 'btn btn-primary' %>
-          <%= link_to "Read", read_book_path(@book), method: :put, remote: true, class: 'btn btn-primary' %>
+
+
+          <% reading = current_user.reading?(@book) ? 'btn-success' : 'btn-primary' %>
+          <%= link_to "Read", read_book_path(@book, user: current_user), method: :put, remote: true, class: "btn #{reading}" %>
 
         </div>
       </div>
@@ -53,7 +56,7 @@
 <div class="row">
   <% unless @reviews.blank? %>
     <% @reviews.each do |review| %>
-    <div class="col">
+      <div class="col">
 
         <div class="media my-1">
           <%= image_tag "http://via.placeholder.com/64x64" %>
@@ -64,7 +67,7 @@
         </div>
 
         <hr>
-      <% end %>
+    <% end %>
     </div>
   <% end %>
 </div>

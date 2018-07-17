@@ -47,6 +47,12 @@ class User < ApplicationRecord
   validates :email, uniqueness: { message: "Duplicate email" }, presence: true
 
 
+
+  def reading?(book)
+    true
+  end
+
+
   # Devise
 
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable,
