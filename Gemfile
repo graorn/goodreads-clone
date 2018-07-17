@@ -27,6 +27,8 @@ gem "acts_as_favoritor", github: "jonhue/acts_as_favoritor"
 gem "google-cloud-storage", "~> 1.8", require: false
 gem "jquery-validation-rails"
 gem "valid_email2"
+gem "ffaker"
+
 
 group :development, :test do
   gem "byebug", platforms: %i[mri mingw x64_mingw]
@@ -55,7 +57,6 @@ group :development do
   gem "rails_apps_testing", github: "RailsApps/rails_apps_testing"
   gem "better_errors"
   gem "binding_of_caller"
-  gem "ffaker"
 end
 
 group :production do
