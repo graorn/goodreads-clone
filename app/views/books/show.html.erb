@@ -23,9 +23,13 @@
 
           <%= link_to 'Edit', edit_book_path(@book), class: 'btn btn-primary' %>
 
-          <%= link_to current_user.favorited?(@book) ? 'Unfavorite' : 'Favorite', favorite_book_path(@book),
-                      method: :put, id: "favorite_link", class: 'btn btn-primary',
-                      remote: true %>
+
+          <% css_class = current_user.favorited?(@book) ? 'btn-success' : 'btn-primary'%>
+          <%= link_to current_user.favorited?(@book) ? 'Favorited' : 'Favorite',
+                                              favorite_book_path(@book), method: :put, id: "favorite_link",
+                      class: "btn #{css_class}", remote: true %>
+
+
 
           <%= link_to "Add review", new_book_review_path(@book), class: 'btn btn-primary' %>
           <%= link_to "Read", read_book_path(@book), method: :put, remote: true, class: 'btn btn-primary' %>
