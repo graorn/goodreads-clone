@@ -147,6 +147,8 @@ GEM
     ffi (1.9.25-x64-mingw32)
     ffi (1.9.25-x86-mingw32)
     formatador (0.2.5)
+    friendly_id (5.1.0)
+      activerecord (>= 4.0.0)
     fuubar (2.3.1)
       rspec-core (~> 3.0)
       ruby-progressbar (~> 1.4)
@@ -510,6 +512,7 @@ PLATFORMS
 
 DEPENDENCIES
   acts_as_favoritor!
+  autoprefixer-rails
   better_errors
   binding_of_caller
   bootsnap (>= 1.1.0)
@@ -523,6 +526,7 @@ DEPENDENCIES
   email_spec
   factory_bot_rails
   ffaker
+  friendly_id (~> 5.1.0)
   fuubar
   google-cloud-storage (~> 1.8)
   guard-annotate

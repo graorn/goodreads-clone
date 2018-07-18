@@ -27,7 +27,9 @@
 #
 
 class User < ApplicationRecord
+
   before_save :normalize_email
+
   acts_as_favoritor
 
 

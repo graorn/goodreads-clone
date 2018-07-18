@@ -16,6 +16,9 @@
 #
 
 class Book < ApplicationRecord
+  extend FriendlyId
+  friendly_id :title, use: :slugged
+
   acts_as_favoritable
 
   has_many :reviews, as: :reviewable

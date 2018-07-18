@@ -28,6 +28,8 @@ gem "google-cloud-storage", "~> 1.8", require: false
 gem "jquery-validation-rails"
 gem "valid_email2"
 gem "ffaker"
+gem "autoprefixer-rails"
+gem 'friendly_id', '~> 5.1.0'
 
 
 group :development, :test do
