@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require "rails_helper"
+require 'rails_helper'
 
 RSpec.describe User, type: :model do
   let!(:user) do
@@ -11,21 +11,21 @@ RSpec.describe User, type: :model do
     create :read
   end
 
-  it "is valid with valid attributes" do
+  it 'is valid with valid attributes' do
     expect(user).to be_valid
   end
 
-  it "is invalid without email" do
+  it 'is invalid without email' do
     user.email = nil
     expect(user).to be_invalid
   end
 
-  it "is valid with valid email" do
-    user.email = "invalid email"
+  it 'is valid with valid email' do
+    user.email = 'invalid email'
     expect(user).to be_invalid
   end
 
-  it "is invalid without password" do
+  it 'is invalid without password' do
     user.password = nil
     expect(user).to be_invalid
   end

@@ -10,8 +10,8 @@ class ActsAsFavoritorMigration < ActiveRecord::Migration[5.2]
       t.timestamps
     end
 
-    add_index :favorites, ["favoritor_id", "favoritor_type"], name: "fk_favorites"
-    add_index :favorites, ["favoritable_id", "favoritable_type"], name: "fk_favoritables"
+    add_index :favorites, ['favoritor_id', 'favoritor_type'], name: 'fk_favorites'
+    add_index :favorites, ['favoritable_id', 'favoritable_type'], name: 'fk_favoritables'
   end
 
   def self.down

@@ -13,9 +13,10 @@
 #  cover       :string
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  slug        :string
 #
 
-require "ffaker"
+require 'ffaker'
 
 FactoryBot.define do
   factory :book do

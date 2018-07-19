@@ -17,7 +17,7 @@
 </div>
 
 <hr>
-<% @books.each do |book| %>
+<% @books.each_with_index do |book, index| %>
   <div class="row">
     <div class="col-md-7">
       <%= link_to image_tag(book.cover) %>
@@ -29,7 +29,7 @@
           <h3><%= book.title %></h3>
           <h4><%= book.author %></h4>
           <p><%= truncate(book.description, length: 100) %></p>
-          <%= link_to 'View Book', book, class: "btn btn-primary" %>
+          <%= link_to 'View Book', book, class: "btn btn-primary", id: "book-#{index + 1}" %>
         </div>
       </div>
     </div>

@@ -14,3 +14,9 @@ AllCops:
   Exclude:
     - 'config/initializers/**/*'
     - 'bin/**/*'
+
+Style/StringLiterals:
+  EnforcedStyle: single_quotes
+
+Style/SymbolArray:
+  Enabled: true

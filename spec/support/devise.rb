@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require "support/controller_macros"
+require 'support/controller_macros'
 
 RSpec.configure do |config|
   config.include Devise::TestHelpers, type: :controller

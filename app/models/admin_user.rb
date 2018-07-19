@@ -2,7 +2,7 @@
 
 # == Schema Information
 #
-# Table name: users
+# Table name: admin_users
 #
 #  id                     :integer          not null, primary key
 #  email                  :string           default(""), not null
@@ -17,24 +17,11 @@
 #  last_sign_in_ip        :string
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
-#  confirmation_token     :string
-#  confirmed_at           :datetime
-#  confirmation_sent_at   :datetime
-#  provider               :string
-#  uid                    :string
-#  name                   :string
-#  image                  :string
 #
 
-
-require 'ffaker'
-
-FactoryBot.define do
-  factory :user do
-    name FFaker::Name.unique.name
-    sequence :email do |n|
-      "person#{n}@example.com"
-    end
-    password FFaker::Internet.unique.password(min_length = 6)
-  end
+class AdminUser < ApplicationRecord
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable,
+         :recoverable, :rememberable, :trackable, :validatable
 end

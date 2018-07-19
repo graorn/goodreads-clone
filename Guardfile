@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-guard "livereload" do
+guard 'livereload' do
   extensions = {
     css: :css,
     scss: :css,
@@ -37,15 +37,15 @@ guard "livereload" do
 end
 
 
-guard "annotate" do
-  watch("db/schema.rb")
+guard 'annotate' do
+  watch('db/schema.rb')
 end
 
 
 # This group allows to skip running RuboCop when RSpec failed.
 group :red_green_refactor, halt_on_fail: true do
-  guard :rspec, cmd: "bundle exec rspec --drb --format Fuubar --color" do
-    require "guard/rspec/dsl"
+  guard :rspec, cmd: 'bundle exec rspec --drb --format Fuubar --color' do
+    require 'guard/rspec/dsl'
     dsl = Guard::RSpec::Dsl.new(self)
 
     # Feel free to open issues for suggestions and improvements
@@ -85,11 +85,11 @@ group :red_green_refactor, halt_on_fail: true do
     # Turnip features and steps
     watch(%r{^spec/acceptance/(.+)\.feature$})
     watch(%r{^spec/acceptance/steps/(.+)_steps\.rb$}) do |m|
-      Dir[File.join("**/#{m[1]}.feature")][0] || "spec/acceptance"
+      Dir[File.join("**/#{m[1]}.feature")][0] || 'spec/acceptance'
     end
   end
 
-  guard :rubocop, cli: "-a -R" do
+  guard :rubocop, cli: '-a -R' do
     watch(%r{.+\.rb$})
     watch(%r{(?:.+/)?\.rubocop(?:_todo)?\.yml$}) { |m| File.dirname(m[0]) }
   end

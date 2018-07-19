@@ -9,7 +9,7 @@
 #  book_id :integer          not null
 #
 
-require "ffaker"
+require 'ffaker'
 
 FactoryBot.define do
   factory :read do

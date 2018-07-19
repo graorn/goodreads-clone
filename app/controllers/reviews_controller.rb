@@ -3,25 +3,25 @@
 class ReviewsController < ApplicationController
   def new
     @review = Review.new
-    @book = Book.find(params[:book_id])
+    @book = Book.friendly.find(params[:book_id])
   end
 
   def create
-    @book = Book.find(params[:book_id])
+    @book = Book.friendly.find(params[:book_id])
 
     @review = Review.new(
       reviewable_id: params[:book_id],
-      reviewable_type: "Book",
-      reviewer_type: "User",
+      reviewable_type: 'Book',
+      reviewer_type: 'User',
       reviewer_id: current_user.id,
       body: params[:review][:body],
       rating: params[:review][:rating],
       title: params[:review][:title])
 
     if @review.save
-      redirect_to book_path(@book), notice: "Created review"
+      redirect_to book_path(@book), notice: 'Created review'
     else
-      redirect_to book_path(@book), notice: "Cannot create review"
+      redirect_to new_book_review_path
     end
   end
 end

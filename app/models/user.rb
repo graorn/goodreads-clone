@@ -27,7 +27,6 @@
 #
 
 class User < ApplicationRecord
-
   before_save :normalize_email
 
   acts_as_favoritor
@@ -46,7 +45,7 @@ class User < ApplicationRecord
   # Validations
 
   validates :password, presence: true
-  validates :email, uniqueness: { message: "Duplicate email" }, presence: true
+  validates :email, uniqueness: { message: 'Duplicate email' }, presence: true
 
 
 
@@ -74,8 +73,8 @@ class User < ApplicationRecord
 
   def self.new_with_session(params, session)
     super.tap do |user|
-      if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
-        user.email = data["email"] if user.email.blank?
+      if data = session['devise.facebook_data'] && session['devise.facebook_data']['extra']['raw_info']
+        user.email = data['email'] if user.email.blank?
       end
     end
   end
