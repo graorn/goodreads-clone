@@ -46,6 +46,7 @@ group :development, :test do
   gem 'switch_user'
   gem 'rubocop-rspec'
   gem 'fuubar'
+  gem 'shoulda-matchers', git: 'https://github.com/thoughtbot/shoulda-matchers.git', branch: 'rails-5'
 end
 
 group :development do
@@ -58,7 +59,6 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'web-console', '>= 3.3.0'
-  gem 'rails_apps_testing', github: 'RailsApps/rails_apps_testing'
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'rails-erd'
@@ -70,11 +70,7 @@ end
 
 group :test do
   gem 'database_cleaner'
-  gem 'launchy'
-  gem 'rails-controller-testing'
-  gem 'shoulda-matchers', '~> 3.1'
   gem 'capybara'
-  gem 'selenium-webdriver'
 end
 
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]

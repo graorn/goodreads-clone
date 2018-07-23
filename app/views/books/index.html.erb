@@ -29,7 +29,7 @@
           <h3><%= book.title %></h3>
           <h4><%= book.author %></h4>
           <p><%= truncate(book.description, length: 100) %></p>
-          <%= link_to 'View Book', book, class: "btn btn-primary", id: "book-#{index + 1}" %>
+          <%= link_to 'View Book', book, class: "btn btn-primary", id: "book_#{index + 1}" %>
         </div>
       </div>
     </div>

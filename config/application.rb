@@ -27,7 +27,6 @@ module GoodreadsClone
       g.stylesheet_engine :scss
       g.scaffold_stylesheet = false
       g.system_tests = false
-      g.fixture_replacement :factory_bot, dir: 'spec/factories'
     end
 
     # Initialize configuration defaults for originally generated Rails version.

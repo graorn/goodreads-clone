@@ -24,7 +24,8 @@
 #  uid                    :string
 #  name                   :string
 #  image                  :string
-#
+
+
 
 class User < ApplicationRecord
   before_save :normalize_email

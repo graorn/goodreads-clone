@@ -3,10 +3,9 @@
 require 'rails_helper'
 
 RSpec.feature 'Books', type: :feature do
-  before(:all) do
-    signin
-  end
+  user = FactoryBot.create(:user)
 
+  before(:each) {login_as(user, :scope => :user)}
 
   describe 'user favorites a book' do
     pending 'Database does not get cleaned after favoriting'
@@ -34,7 +33,6 @@ RSpec.feature 'Books', type: :feature do
       fill_in 'review_rating', with: 5
 
       click_button 'Create Review'
-
     end
   end
 end
