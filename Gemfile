@@ -29,7 +29,6 @@ gem 'jquery-validation-rails'
 gem 'valid_email2'
 gem 'ffaker'
 gem 'autoprefixer-rails'
-gem 'friendly_id', '~> 5.1.0'
 gem 'activeadmin'
 
 

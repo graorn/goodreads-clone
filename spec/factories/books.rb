@@ -20,7 +20,7 @@ require 'ffaker'
 
 FactoryBot.define do
   factory :book do
-    title  { FFaker::Book.unique.title }
+    title { FFaker::Book.unique.title }
     author { FFaker::Book.unique.author }
   end
 end

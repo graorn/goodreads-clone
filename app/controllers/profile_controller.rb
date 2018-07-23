@@ -8,5 +8,4 @@ class ProfileController < ApplicationController
     @readBooks = Book.left_outer_joins(:reads)
   end
 
-  private
 end
