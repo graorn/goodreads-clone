@@ -95,7 +95,7 @@ GEM
       msgpack (~> 1.0)
     bootsnap (1.3.1-java)
       msgpack (~> 1.0)
-    bootstrap (4.1.1)
+    bootstrap (4.1.2)
       autoprefixer-rails (>= 6.0.3)
       popper_js (>= 1.12.9, < 2)
       sass (>= 3.5.2)
@@ -194,6 +194,7 @@ GEM
       multi_json (~> 1.11)
       os (~> 0.9)
       signet (~> 0.7)
+    gravatar_image_tag (1.2.0)
     guard (2.14.2)
       formatador (>= 0.2.4)
       listen (>= 2.7, < 4.0)
@@ -537,7 +538,7 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   bootsnap (>= 1.1.0)
-  bootstrap (~> 4.1.1)
+  bootstrap (~> 4.1.2)
   brakeman
   byebug
   capybara
@@ -549,6 +550,7 @@ DEPENDENCIES
   ffaker
   fuubar
   google-cloud-storage (~> 1.8)
+  gravatar_image_tag (~> 1.2)
   guard-annotate
   guard-livereload (~> 2.5)
   guard-rspec

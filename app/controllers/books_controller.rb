@@ -3,7 +3,8 @@
 # # frozen_string_literal: true
 #
 class BooksController < ApplicationController
-  before_action :set_book, only: %i[edit show update destroy favorite favorite_text read]
+  before_action :set_book,
+                only: %i[edit show update destroy favorite place_book_to_reading_list]
   before_action :authenticate_user!
 
   def index
@@ -12,7 +13,7 @@ class BooksController < ApplicationController
   end
 
   def show
-    @reviews = @book.reviews
+    @reviews = @book.reviews.order("created_at DESC")
   end
 
   def new
@@ -69,7 +70,15 @@ class BooksController < ApplicationController
     current_user.remove_favorite @book
   end
 
-  #
+  def place_book_to_reading_list
+    @list = ReadingList.new(book: @book, user: current_user)
+
+    if @list.save
+      redirect_to @book, notice: 'Book is placed in a reading list'
+    else
+      redirect_to @book, notice: 'Book is not placed in a reading list'
+    end
+  end
 
   private
 

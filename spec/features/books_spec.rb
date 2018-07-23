@@ -21,8 +21,9 @@ RSpec.feature 'Books', type: :feature do
 
   describe 'review' do
     it 'leaves a review for a book' do
-      visit books_path(1)
+      FactoryBot.create(:book)
 
+      visit
       click_link 'Add review'
 
       fill_in 'review_title', with: 'Test title'

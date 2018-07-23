@@ -14,8 +14,8 @@
           </div>
 
           <div class="form-group">
-            <%= f.label :body, value: 'Review' %>
-            <%= f.text_area :body, label: 'Review', class: "form-control", placeholder: 'Type review here', required: true %>
+            <%= f.label :content, value: 'Review' %>
+            <%= f.text_area :content, label: 'Review', class: "form-control", placeholder: 'Type review here', required: true %>
 
           </div>
 
@@ -24,6 +24,8 @@
             <%= f.label :rating, value: 'Rating' %>
             <%= f.number_field :rating, label: 'rating', class: "form-control", placeholder: ' 1 - 5 ', min: 1, max: 5 %>
           </div>
+
+
 
           <%= f.button :submit %>
 

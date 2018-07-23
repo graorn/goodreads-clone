@@ -14,7 +14,7 @@ gem 'sass-rails', '~> 5.0'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 
-gem 'bootstrap', '~> 4.1.1'
+gem 'bootstrap', '~> 4.1.2'
 gem 'devise'
 gem 'jquery-rails'
 gem 'omniauth-facebook'
@@ -30,8 +30,7 @@ gem 'valid_email2'
 gem 'ffaker'
 gem 'autoprefixer-rails'
 gem 'activeadmin'
-
-
+gem 'gravatar_image_tag', '~> 1.2'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]

@@ -30,8 +30,9 @@
                       class: "btn #{favorited}", remote: true %>
 
 
+          <%= link_to "Read", read_book_path(@book), method: :post, class: 'btn btn-primary' %>
 
-          <%= link_to "Add review", new_book_review_path(@book), class: 'btn btn-primary' %>
+          <%= link_to "Add review", new_book_review_path(@book, user: current_user), class: 'btn btn-primary' %>
 
         </div>
       </div>
@@ -52,18 +53,37 @@
 <div class="row">
   <% unless @reviews.blank? %>
     <% @reviews.each do |review| %>
-      <div class="col">
+      <div class="col col-md-4 mb-2">
 
-        <div class="media my-1">
-          <%= image_tag "http://via.placeholder.com/64x64" %>
+        <div class="card">
+          <div class="card-body text-center">
+            <figure class="figure">
+              <%= gravatar_image_tag(review.user.email, class: 'img-fluid rounded-circle m-auto d-block') %>
+              <span class="badge badge-primary"><%= review.rating %></span>
 
-          <div class="media-body ml-1">
-            <h5 class="mt-0"> <%= review.title %> </h5>
-            <%= review.body %> </div>
+              <figcaption class="figure-caption text-center ">
+                <%= review.user.name %>
+              </figcaption>
+            </figure>
+
+            <p class="text-center"><%= review.user.email %>
+            </p>
+            <p class="text-center"><%= time_ago_in_words(review.created_at) %> ago</p>
+          </div>
         </div>
 
-        <hr>
+      </div>
+
+      <div class="col col-md-8">
+        <div class="media my-1">
+
+          <div class="review media-body ml-1">
+            <h4 class="mt-0"> <%= review.title %> </h4>
+            <%= review.content %> </div>
+        </div>
+      </div>
+      <hr>
     <% end %>
     </div>
   <% end %>
-</div>
+  </div>

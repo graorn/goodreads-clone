@@ -35,12 +35,8 @@ class User < ApplicationRecord
 
   # Associations
 
-  has_many :reviews, as: :reviewable
-  has_many :reviewers, as: :reviewer
-
-  has_many :reads
-  has_many :books, through: :reads
-
+  has_many :reviews
+  has_many :reading_lists
   has_one_attached :avatar
 
   # Validations

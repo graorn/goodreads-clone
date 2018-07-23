@@ -5,7 +5,7 @@ class ProfileController < ApplicationController
 
   def index
     @favorited_books = current_user.all_favorited
-    @readBooks = Book.left_outer_joins(:reads)
+    @books_to_read = ReadingList.all.where(user: current_user)
   end
 
 end

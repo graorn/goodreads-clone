@@ -20,11 +20,8 @@ class Book < ApplicationRecord
 
   acts_as_favoritable
 
-  has_many :reviews, as: :reviewable
-  has_many :reviewers, as: :reviewer
-
-  has_many :reads
-  has_many :users, through: :reads
+  has_many :reviews
+  has_many :reading_lists
 
 
   validates_presence_of :title

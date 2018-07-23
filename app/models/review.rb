@@ -17,6 +17,6 @@
 #
 
 class Review < ApplicationRecord
-  belongs_to :reviewable, polymorphic: true
-  belongs_to :reviewer, polymorphic: true
+  belongs_to :user
+  belongs_to :book
 end
