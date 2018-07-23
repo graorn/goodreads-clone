@@ -4,7 +4,7 @@
 #
 class BooksController < ApplicationController
   before_action :set_book, only: %i[edit show update destroy favorite favorite_text read]
-  #   before_action :authenticate_user!
+  before_action :authenticate_user!
 
   def index
     @q = Book.ransack(params[:q])

@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.feature 'Visitors', type: :feature do
-  let!(:user) { build :user }
+  let!(:user) {build_stubbed :user}
 
   describe 'Account creation' do
     before(:each) do
@@ -45,7 +45,6 @@ RSpec.feature 'Visitors', type: :feature do
 
     scenario 'navigate to books path' do
       visit books_path
-
       expect(page).to have_content 'You need to sign in or sign up before continuing. '
     end
   end
