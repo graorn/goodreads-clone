@@ -7,6 +7,10 @@ Rails.application.routes.draw do
 
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
+  resources :users do
+    resources :profile
+  end
+
   resources :books do
     resources :reviews
     resources :favorites
@@ -20,6 +24,4 @@ Rails.application.routes.draw do
       match 'search' => 'books#search', via: %i[get post], as: :search
     end
   end
-
-  resources :profile
 end

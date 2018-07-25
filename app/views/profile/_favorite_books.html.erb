@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col">
+    <div class="collapse multi-collapse show" id="multiCollapseExample1">
+
+      <% unless @favorited_books.blank? %>
+        <h1>Favorite books</h1>
+        <div class="row">
+          <% @favorited_books.each do |favorite_book| %>
+
+            <div class="col col-md-4 mb-5">
+              <%= link_to image_tag(favorite_book.book.cover, class: "img-fluid img-thumbnail"), favorite_book.book %>
+
+            </div>
+          <% end %>
+        </div>
+
+      <% else %>
+
+        <h1>No favorited books</h1>
+
+      <% end %>
+    </div>
+  </div>
+</div>

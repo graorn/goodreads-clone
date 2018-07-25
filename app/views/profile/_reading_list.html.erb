@@ -1,0 +1,11 @@
+<% unless @books_to_read.blank? %>
+
+  <div class="col">
+    <div class="collapse multi-collapse" id="multiCollapseExample2">
+      <% @books_to_read.each do |list| %>
+        <h1><%= list.book.title %></h1>
+      <% end %>
+    </div>
+  </div>
+
+<% end %>
