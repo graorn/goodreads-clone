@@ -2,8 +2,6 @@
 
 Rails.application.routes.draw do
   root to: 'home#index'
-
-
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
@@ -19,7 +17,6 @@ Rails.application.routes.draw do
 
     collection do
       match 'search' => 'books#search', via: %i[get post], as: :search
-      #match 'read' => 'books#place_book_to_reading_list', via: :post, as: :read
     end
   end
 

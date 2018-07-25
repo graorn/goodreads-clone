@@ -13,7 +13,6 @@
 #  cover       :string
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
-#  slug        :string
 #
 
 require 'ffaker'

@@ -13,24 +13,24 @@ class BooksController < ApplicationController
   end
 
   def show
-    @reviews = @book.reviews.order("created_at DESC")
+    @reviews = @book.reviews.order('created_at DESC')
   end
 
   def new
-    @book = current_user.books.build
+    @book = Book.new
   end
 
   def edit
   end
 
   def create
-    @book = current_user.books.build(book_params)
+    @book = Book.new(book_params)
 
     respond_to do |format|
       if @book.save
-        format.html {redirect_to @book, notice: 'Book was successfully created.'}
+        format.html { redirect_to @book, notice: 'Book was successfully created.' }
       else
-        format.html {redirect_to new_book_path}
+        format.html { redirect_to new_book_path }
       end
     end
   end
@@ -38,9 +38,9 @@ class BooksController < ApplicationController
   def update
     respond_to do |format|
       if @book.update(book_params)
-        format.html {redirect_to @book, notice: 'Book was successfully updated.'}
+        format.html { redirect_to @book, notice: 'Book was successfully updated.' }
       else
-        format.html {render :edit}
+        format.html { render :edit }
       end
     end
   end
@@ -48,7 +48,7 @@ class BooksController < ApplicationController
   def destroy
     @book.destroy
     respond_to do |format|
-      format.html {redirect_to books_url, notice: 'Book was successfully destroyed.'}
+      format.html { redirect_to books_url, notice: 'Book was successfully destroyed.' }
     end
   end
 
@@ -82,12 +82,12 @@ class BooksController < ApplicationController
 
   private
 
-  def set_book
-    @book = Book.find(params[:id])
-  end
+    def set_book
+      @book = Book.find(params[:id])
+    end
 
-  def book_params
-    params.require(:book).permit(
+    def book_params
+      params.require(:book).permit(
         :title, :author, :genre, :description)
-  end
+    end
 end

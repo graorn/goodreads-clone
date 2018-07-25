@@ -5,7 +5,7 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   let!(:user) { build :user }
 
-  let!(:read) { build :read }
+  let!(:read) { build :reading_list }
 
   it 'is valid with valid attributes' do
     expect(user).to be_valid
@@ -31,5 +31,5 @@ RSpec.describe User, type: :model do
   it { should validate_uniqueness_of(:email).case_insensitive }
   it { should validate_presence_of :password }
 
-  it { should have_many :reads }
+  it { should have_many :reading_lists }
 end

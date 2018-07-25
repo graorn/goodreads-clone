@@ -7,5 +7,4 @@ class ProfileController < ApplicationController
     @favorited_books = current_user.all_favorited
     @books_to_read = ReadingList.all.where(user: current_user)
   end
-
 end

@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.feature 'Visitors', type: :feature do
-  let!(:user) {build_stubbed :user}
+  let!(:user) { build_stubbed :user }
 
   describe 'Account creation' do
     before(:each) do

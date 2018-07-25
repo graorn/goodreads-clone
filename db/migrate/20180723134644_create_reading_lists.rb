@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateReadingLists < ActiveRecord::Migration[5.2]
   def change
     create_table :reading_lists do |t|

@@ -6,6 +6,5 @@ RSpec.describe Book, type: :model do
   it { should validate_presence_of :title }
   it { should validate_presence_of :author }
 
-  it { should have_many :reads }
-  it { should have_many(:users) }
+  it { should have_many :reading_lists }
 end

@@ -13,11 +13,9 @@
 #  cover       :string
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
-#  slug        :string
 #
 
 class Book < ApplicationRecord
-
   acts_as_favoritable
 
   has_many :reviews

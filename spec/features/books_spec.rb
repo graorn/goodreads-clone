@@ -18,21 +18,4 @@ RSpec.feature 'Books', type: :feature do
       it 'favorites the book'
     end
   end
-
-  describe 'review' do
-    it 'leaves a review for a book' do
-      FactoryBot.create(:book)
-
-      visit
-      click_link 'Add review'
-
-      fill_in 'review_title', with: 'Test title'
-      fill_in 'review_body', with: 'Test body review'
-      fill_in 'review_rating', with: 5
-
-      click_button 'Create Review'
-
-      expect
-    end
-  end
 end

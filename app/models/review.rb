@@ -4,16 +4,14 @@
 #
 # Table name: reviews
 #
-#  id              :integer          not null, primary key
-#  reviewable_type :string
-#  reviewable_id   :integer
-#  reviewer_type   :string
-#  reviewer_id     :integer
-#  rating          :integer
-#  body            :text
-#  title           :text
-#  created_at      :datetime         not null
-#  updated_at      :datetime         not null
+#  id         :integer          not null, primary key
+#  user_id    :integer
+#  book_id    :integer
+#  content    :string
+#  title      :string
+#  rating     :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
 #
 
 class Review < ApplicationRecord
