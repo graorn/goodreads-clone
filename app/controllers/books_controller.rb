@@ -63,11 +63,11 @@ class BooksController < ApplicationController
   end
 
   def favorite
-    unless current_user.favorited? @book
-      return current_user.favorite @book
-    end
+    @favorite = Favorite.new(book: @book, user: current_user)
 
-    current_user.remove_favorite @book
+    if @favorite.save
+      redirect_to @book, notice: 'The book is placed in favorites'
+    end
   end
 
   def place_book_to_reading_list

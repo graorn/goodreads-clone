@@ -3,19 +3,16 @@
 require 'rails_helper'
 
 RSpec.feature 'Books', type: :feature do
-  user = FactoryBot.create(:user)
+  let!(:user) { create :user }
+  let!(:book) { create :book }
 
   before(:each) { login_as(user, scope: :user) }
 
-  describe 'user favorites a book' do
-    pending 'Database does not get cleaned after favoriting'
+  it 'favorites the book', format: :js do
+    visit(book_path(book))
 
-    context 'book is favorited' do
-      it 'unfavorites the book'
-    end
+    click_link 'Favorite'
 
-    context 'book is not favorited' do
-      it 'favorites the book'
-    end
+    expect(page).to have_content 'The book is placed in favorites'
   end
 end

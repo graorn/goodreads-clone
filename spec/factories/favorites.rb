@@ -12,7 +12,9 @@
 #
 
 
-class Favorite < ApplicationRecord
-  belongs_to :user
-  belongs_to :book
+FactoryBot.define do
+  factory :favorite do
+    user nil
+    book nil
+  end
 end

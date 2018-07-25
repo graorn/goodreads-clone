@@ -16,11 +16,8 @@
 #
 
 class Book < ApplicationRecord
-  acts_as_favoritable
-
   has_many :reviews
   has_many :reading_lists
-
 
   validates_presence_of :title
   validates_presence_of :author

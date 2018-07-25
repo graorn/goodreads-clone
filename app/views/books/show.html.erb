@@ -23,15 +23,8 @@
 
           <%= link_to 'Edit', edit_book_path(@book), class: 'btn btn-primary' %>
 
-
-          <% favorited = current_user.favorited?(@book) ? 'btn-success' : 'btn-primary' %>
-          <%= link_to current_user.favorited?(@book) ? 'Favorited' : 'Favorite',
-                      favorite_book_path(@book), method: :put, id: "favorite_link",
-                      class: "btn #{favorited}", remote: true %>
-
-
           <%= link_to "Read", read_book_path(@book), method: :post, class: 'btn btn-primary' %>
-
+          <%= link_to 'Favorite', favorite_book_path(@book), method: :post, remote: true %>
           <%= link_to "Add review", new_book_review_path(@book, user: current_user), class: 'btn btn-primary' %>
 
         </div>
@@ -44,6 +37,7 @@
     </div>
   </div>
   <div class="col text-center">
+    <%= image_tag(@book.cover, class: 'img-fluid') %>
   </div>
 </div>
 

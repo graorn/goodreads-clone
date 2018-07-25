@@ -15,7 +15,7 @@
           <% @favorited_books.each do |favorite_book| %>
 
             <div class="col col-md-4 mb-5">
-              <%= link_to image_tag(favorite_book.cover, class: "img-fluid img-thumbnail"), favorite_book %>
+              <%= link_to image_tag(favorite_book.book.cover, class: "img-fluid img-thumbnail"), favorite_book.book %>
 
             </div>
           <% end %>

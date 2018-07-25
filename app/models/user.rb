@@ -30,17 +30,13 @@
 class User < ApplicationRecord
   before_save :normalize_email
 
-  acts_as_favoritor
-
 
   # Associations
-
   has_many :reviews
   has_many :reading_lists
   has_one_attached :avatar
 
   # Validations
-
   validates :password, presence: true
   validates :email, uniqueness: { message: 'Duplicate email' }, presence: true
 

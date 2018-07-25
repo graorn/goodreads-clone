@@ -21,5 +21,6 @@ FactoryBot.define do
   factory :book do
     title { FFaker::Book.unique.title }
     author { FFaker::Book.unique.author }
+    cover { FFaker::Book.orly_cover  }
   end
 end

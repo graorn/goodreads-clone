@@ -14,7 +14,6 @@ User.create!(
   email: 'test2@mail.com',
   password: 123_123,
   image: FFaker::Avatar.image
-
 )
 
 20.times do
@@ -39,12 +38,4 @@ end
   )
 end
 
-10.times do
-  Favorite.create!(
-    favoritor_type: 'User',
-    favoritor_id: 1,
-    favoritable_type: 'Book',
-    favoritable_id: rand(1..5),
-  )
-end
 AdminUser.create!(email: 'test@mail.com', password: 123123, password_confirmation: 123123) if Rails.env.development?

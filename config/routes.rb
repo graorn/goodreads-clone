@@ -9,9 +9,10 @@ Rails.application.routes.draw do
 
   resources :books do
     resources :reviews
+    resources :favorites
+
     member do
-      put 'favorite', to: 'books#favorite'
-      put 'unfavorite', to: 'books#unfavorite'
+      post 'favorite', to: 'books#favorite'
       post 'read', to: 'books#place_book_to_reading_list'
     end
 
