@@ -18,6 +18,7 @@
 class Book < ApplicationRecord
   has_many :reviews
   has_many :reading_lists
+  has_many :favorites
 
   validates_presence_of :title
   validates_presence_of :author

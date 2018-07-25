@@ -67,6 +67,8 @@ class BooksController < ApplicationController
 
     if @favorite.save
       redirect_to @book, notice: 'The book is placed in favorites'
+    else
+      redirect_to @book, notice: 'The book is NOT placed in favorites'
     end
   end
 

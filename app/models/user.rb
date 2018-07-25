@@ -34,6 +34,7 @@ class User < ApplicationRecord
   # Associations
   has_many :reviews
   has_many :reading_lists
+  has_many :favorites
   has_one_attached :avatar
 
   # Validations
@@ -41,20 +42,12 @@ class User < ApplicationRecord
   validates :email, uniqueness: { message: 'Duplicate email' }, presence: true
 
 
-
-  def reading?(book)
-    true
-  end
-
-
   # Devise
-
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable,
          :validatable, :omniauthable, omniauth_providers: %i[facebook]
 
 
   # Omniauth
-
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.email = auth.info.email
