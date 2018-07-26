@@ -1,15 +1,18 @@
 
-
+@import "font-awesome-sprockets";
+@import "font-awesome";
 @import "bootstrap";
 
 body {
-  background: #fff url("https://upload.wikimedia.org/wikipedia/commons/1/1c/Book_sale_loot_%284552277923%29.jpg") no-repeat fixed center;
-  background-size: cover;
+  // background     : #fff url("https://upload.wikimedia.org/wikipedia/commons/1/1c/Book_sale_loot_%284552277923%29.jpg") no-repeat fixed center;
+  // background-size: cover;
+
+  background: #ccc;
 }
 
 .media {
   background-color: #2E2F30;
-  color: #fff;
+  color           : #fff;
 }
 
 html {

@@ -31,6 +31,8 @@ gem 'ffaker'
 gem 'autoprefixer-rails'
 gem 'activeadmin'
 gem 'gravatar_image_tag', '~> 1.2'
+gem 'font-awesome-sass', '~> 5.0.13'
+
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
@@ -60,6 +62,9 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'rails-erd'
+  gem 'consistency_fail'
+  gem 'active_record_doctor'
+  gem 'nullalign'
 end
 
 group :production do

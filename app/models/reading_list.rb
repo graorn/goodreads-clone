@@ -15,5 +15,5 @@ class ReadingList < ApplicationRecord
   belongs_to :user
   belongs_to :book
 
-  validates_uniqueness_of :book
+  validates_uniqueness_of :book, scope: :user
 end

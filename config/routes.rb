@@ -17,7 +17,10 @@ Rails.application.routes.draw do
 
     member do
       post 'favorite', to: 'books#favorite'
+      delete 'unfavorite', to: 'books#unfavorite'
+
       post 'read', to: 'books#place_book_to_reading_list'
+      delete 'remove_from_reading_list', to: 'books#remove_from_reading_list', as: :read_remove
     end
 
     collection do

@@ -4,8 +4,9 @@
 #
 class BooksController < ApplicationController
   before_action :set_book,
-                only: %i[edit show update destroy favorite place_book_to_reading_list]
+                only: %i[edit show update destroy favorite unfavorite place_book_to_reading_list remove_from_reading_list]
   before_action :authenticate_user!
+
 
   def index
     @q = Book.ransack(params[:q])
@@ -63,22 +64,56 @@ class BooksController < ApplicationController
   end
 
   def favorite
-    @favorite = Favorite.new(book: @book, user: current_user)
-
-    if @favorite.save
-      redirect_to @book, notice: 'The book is placed in favorites'
+    if Favorite.exists?(book: @book, user: current_user)
+      redirect_to @book, notice: 'Already liked'
     else
-      redirect_to @book, notice: 'The book is NOT placed in favorites'
+
+      @favorite = Favorite.new(book: @book, user: current_user)
+
+      if @favorite.save
+        redirect_to @book, notice: 'The book is placed in favorites'
+      else
+        redirect_to @book, notice: 'Unexpected error'
+      end
+
+    end
+  end
+
+  def unfavorite
+    @favorite = Favorite.where(book: @book, user: current_user)
+
+    if Favorite.delete @favorite
+
+      redirect_to @book, notice: "Book \"#{@book.title}\" is removed from favorites"
+    else
+      redirect_to @book, notice: 'Unexpected error'
+
     end
   end
 
   def place_book_to_reading_list
-    @list = ReadingList.new(book: @book, user: current_user)
-
-    if @list.save
-      redirect_to @book, notice: 'Book is placed in a reading list'
+    if ReadingList.exists?(book: @book, user: current_user)
+      redirect_to @book, notice: 'Already in read list'
     else
-      redirect_to @book, notice: 'Book is not placed in a reading list'
+
+      @list = ReadingList.new(book: @book, user: current_user)
+
+      if @list.save
+        redirect_to @book, notice: "\"#{@book.title}\" is placed in a reading list"
+      else
+        redirect_to @book, notice: 'Unexpected error'
+      end
+    end
+  end
+
+  def remove_from_reading_list
+    @list = ReadingList.where(book: @book, user: current_user)
+
+    if ReadingList.delete @list
+      redirect_to @book, notice: "Book \"#{@book.title}\" is removed from reading list"
+    else
+      redirect_to @book, notice: 'Unexpected error '
+
     end
   end
 

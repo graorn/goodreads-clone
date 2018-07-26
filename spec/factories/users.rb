@@ -24,8 +24,8 @@
 #  uid                    :string
 #  name                   :string
 #  image                  :string
+#  admin                  :boolean
 #
-
 
 require 'ffaker'
 

@@ -24,8 +24,8 @@
 #  uid                    :string
 #  name                   :string
 #  image                  :string
-
-
+#  admin                  :boolean
+#
 
 class User < ApplicationRecord
   before_save :normalize_email
@@ -35,7 +35,6 @@ class User < ApplicationRecord
   has_many :reviews
   has_many :reading_lists
   has_many :favorites
-  has_one_attached :avatar
 
   # Validations
   validates :password, presence: true

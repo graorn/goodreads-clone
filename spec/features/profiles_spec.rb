@@ -7,9 +7,9 @@ RSpec.feature 'User profile', type: :feature do
 
   before(:each) { login_as(user, scope: :user) }
 
-  it 'shows users email' do
-    visit "/users/#{user.id}/profile"
+  it 'shows users name' do
+    visit root_path
 
-    expect(page).to have_content(user.email)
+    expect(page).to have_content(user.name)
   end
 end
