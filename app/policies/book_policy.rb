@@ -25,8 +25,8 @@ class BookPolicy < ApplicationPolicy
     user.admin?
   end
 
-  def delete?
-    user.admin?
+  def destroy?
+    user
   end
 
   def favorite?

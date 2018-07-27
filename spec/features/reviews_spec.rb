@@ -5,6 +5,7 @@ require 'rails_helper'
 RSpec.feature 'Reviews', type: :feature do
   let!(:user) { create :user }
   let!(:book) { create :book }
+  let!(:admin) { create :user, admin: true }
 
   before(:each) { login_as(user, scope: :user) }
 

@@ -1,0 +1,46 @@
+<% unless @reviews.blank? %>
+  <div class="row">
+
+    <% @reviews.each do |review| %>
+      <div class="col col-md-4 mb-2">
+
+        <div class="card">
+          <div class="card-body text-center">
+            <figure class="figure">
+              <%= gravatar_image_tag(review.user.email, class: 'img-fluid rounded-circle m-auto d-block') %>
+              <span class="badge badge-primary"><%= review.rating %></span>
+
+              <figcaption class="figure-caption text-center ">
+                <%= review.user.name %>
+              </figcaption>
+            </figure>
+
+            <p class="text-center"><%= review.user.email %>
+            </p>
+            <p class="text-center"><%= time_ago_in_words(review.created_at) %>
+              ago</p>
+
+            <%= link_to book_review_path(review), remote: true, method: :delete do %>
+            <%= icon 'fas', 'trash' if review.user == current_user || current_user.admin? %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <div class="col col-md-8">
+      <div class="media my-1">
+
+        <div class="review media-body ml-1">
+          <h4 class="mt-0">
+            <%= review.title %>
+          </h4>
+          <%= review.content %>
+
+        </div>
+      </div>
+    </div>
+    <hr>
+  <% end %>
+</div>
+</div>
+<% end %>

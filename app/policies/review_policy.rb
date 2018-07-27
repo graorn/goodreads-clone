@@ -21,7 +21,7 @@ class ReviewPolicy < ApplicationPolicy
     record.user
   end
 
-  def delete?
-    record.user || user.admin?
+  def destroy?
+    user.admin?
   end
 end
