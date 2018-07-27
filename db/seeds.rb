@@ -6,6 +6,7 @@ User.create!(
   name: 'test',
   email: 'test@mail.com',
   password: 123_123,
+  admin: true,
   image: FFaker::Avatar.image
 )
 

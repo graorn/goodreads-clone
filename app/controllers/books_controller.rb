@@ -11,21 +11,27 @@ class BooksController < ApplicationController
   def index
     @q = Book.ransack(params[:q])
     @books = @q.result(distinct: true)
+
+    authorize Book
   end
 
   def show
     @reviews = @book.reviews.order('created_at DESC')
+    authorize @book
   end
 
   def new
     @book = Book.new
+    authorize @book
   end
 
   def edit
+    authorize Book
   end
 
   def create
     @book = Book.new(book_params)
+    authorize @book
 
     respond_to do |format|
       if @book.save
@@ -37,6 +43,8 @@ class BooksController < ApplicationController
   end
 
   def update
+    authorize @book
+
     respond_to do |format|
       if @book.update(book_params)
         format.html { redirect_to @book, notice: 'Book was successfully updated.' }
@@ -47,6 +55,8 @@ class BooksController < ApplicationController
   end
 
   def destroy
+    authorize @book
+
     @book.destroy
     respond_to do |format|
       format.html { redirect_to books_url, notice: 'Book was successfully destroyed.' }
@@ -55,6 +65,8 @@ class BooksController < ApplicationController
 
   def find_one
     @book = Book.find(params[:book_id])
+    authorize @book
+
     render json: @book
   end
 
@@ -70,6 +82,8 @@ class BooksController < ApplicationController
 
       @favorite = Favorite.new(book: @book, user: current_user)
 
+      authorize @favorite, policy_class: BookPolicy
+
       if @favorite.save
         redirect_to @book, notice: 'The book is placed in favorites'
       else
@@ -81,6 +95,8 @@ class BooksController < ApplicationController
 
   def unfavorite
     @favorite = Favorite.where(book: @book, user: current_user)
+
+    authorize @favorite, policy_class: BookPolicy
 
     if Favorite.delete @favorite
 
@@ -98,6 +114,8 @@ class BooksController < ApplicationController
 
       @list = ReadingList.new(book: @book, user: current_user)
 
+      authorize @list, policy_class: BookPolicy
+
       if @list.save
         redirect_to @book, notice: "\"#{@book.title}\" is placed in a reading list"
       else
@@ -108,6 +126,9 @@ class BooksController < ApplicationController
 
   def remove_from_reading_list
     @list = ReadingList.where(book: @book, user: current_user)
+
+    authorize @list, policy_class: BookPolicy
+
 
     if ReadingList.delete @list
       redirect_to @book, notice: "Book \"#{@book.title}\" is removed from reading list"

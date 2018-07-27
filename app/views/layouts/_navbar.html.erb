@@ -46,7 +46,7 @@
           </div>
         </li>
 
-        <li class="navbar-text"><%= current_user.name %></li>
+        <li class="navbar-text"><%= current_user.name %> <%= "ADMIN" if current_user.admin? %> </li>
 
       </ul>
     <% end %>

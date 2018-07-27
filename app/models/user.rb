@@ -15,6 +15,7 @@
 #  last_sign_in_at        :datetime
 #  current_sign_in_ip     :string
 #  last_sign_in_ip        :string
+#  admin                  :boolean          default(FALSE), not null
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #  confirmation_token     :string
@@ -24,7 +25,6 @@
 #  uid                    :string
 #  name                   :string
 #  image                  :string
-#  admin                  :boolean
 #
 
 class User < ApplicationRecord
