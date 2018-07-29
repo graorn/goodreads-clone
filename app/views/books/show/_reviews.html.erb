@@ -1,11 +1,14 @@
 <% unless @reviews.blank? %>
-  <div class="row">
+  <div class="row" id="<%= review.book.title %>">
 
     <% @reviews.each do |review| %>
       <div class="col col-md-4 mb-2">
 
         <div class="card">
           <div class="card-body text-center">
+            <p><%= review.id %>
+            </p>
+
             <figure class="figure">
               <%= gravatar_image_tag(review.user.email, class: 'img-fluid rounded-circle m-auto d-block') %>
               <span class="badge badge-primary"><%= review.rating %></span>
@@ -20,8 +23,12 @@
             <p class="text-center"><%= time_ago_in_words(review.created_at) %>
               ago</p>
 
-            <%= link_to book_review_path(review), remote: true, method: :delete do %>
-            <%= icon 'fas', 'trash' if review.user == current_user || current_user.admin? %>
+            <% if review.user == current_user || current_user.admin? %>
+
+              <%= link_to(book_review_path(@book, review), method: :delete) do %>
+              <%= icon 'fas', 'trash' %>
+            <% end %>
+
           <% end %>
         </div>
       </div>

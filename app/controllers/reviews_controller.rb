@@ -1,15 +1,15 @@
 # frozen_string_literal: true
 
 class ReviewsController < ApplicationController
+  before_action :set_book, only: [:new, :create, :destroy]
+
   def new
     @review = Review.new
-    @book = Book.find(params[:book_id])
 
     authorize @review
   end
 
   def create
-    @book = Book.find(params[:book_id])
 
     @review = Review.new(review_params)
 
@@ -27,6 +27,8 @@ class ReviewsController < ApplicationController
   end
 
   def destroy
+    @book = Book.find(params[:book_id])
+
     @review = Review.find(params[:id])
     authorize @review, :destroy?, policy_class: ReviewPolicy
 
@@ -36,6 +38,10 @@ class ReviewsController < ApplicationController
   end
 
   private
+
+    def set_book
+      @book = Book.find(params[:book_id])
+    end
 
     def review_params
       params.require(:review).permit(:title, :content, :rating)
