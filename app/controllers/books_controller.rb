@@ -18,6 +18,7 @@ class BooksController < ApplicationController
   def show
     @reviews = @book.reviews.order('created_at DESC')
     authorize @book
+    authorize @reviews
   end
 
   def new

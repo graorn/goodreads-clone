@@ -7,7 +7,6 @@ RSpec.feature 'Books', type: :feature do
   let!(:book) { create :book }
   let!(:admin) { create :user, admin: true }
 
-
   context 'by user' do
     before(:each) do
       login_as(user, scope: :user)
@@ -48,6 +47,7 @@ RSpec.feature 'Books', type: :feature do
 
       expect(page).to have_content 'Book was successfully updated.'
     end
+
 
     it 'can be deleted' do
       visit book_path(book)
