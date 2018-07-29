@@ -60,7 +60,7 @@ class BooksController < ApplicationController
 
     @book.destroy
     respond_to do |format|
-      format.html { redirect_to books_url, notice: 'Book was successfully destroyed.' }
+      format.html { redirect_to books_url, notice: 'Book was successfully deleted.' }
     end
   end
 

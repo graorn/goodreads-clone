@@ -52,7 +52,7 @@ RSpec.feature 'Books', type: :feature do
     it 'can be deleted' do
       visit book_path(book)
 
-      click_link 'Delete'
+      click_link 'book_delete'
 
       expect(page).to have_content 'Book was successfully deleted.'
     end

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class ReviewsController < ApplicationController
-  before_action :set_book, only: [:new, :create, :destroy]
+  before_action :set_book, only: %i[new create edit update destroy]
 
   def new
     @review = Review.new
@@ -10,7 +10,6 @@ class ReviewsController < ApplicationController
   end
 
   def create
-
     @review = Review.new(review_params)
 
     @review.book = @book
@@ -23,6 +22,24 @@ class ReviewsController < ApplicationController
       redirect_to book_path(@book), notice: 'Created review'
     else
       redirect_to new_book_review_path, notice: 'Unable to create a review'
+    end
+  end
+
+  def edit
+    @review = Review.find(params[:id])
+
+    authorize @review
+  end
+
+  def update
+    @review = policy_scope(Review).find(params[:id])
+
+    authorize @review
+
+    if @review.update(review_params)
+      redirect_to @book, notice: 'Review updated'
+    else
+      render :edit, notice: 'Review update failed'
     end
   end
 

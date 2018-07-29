@@ -1,10 +1,10 @@
 <% unless @reviews.blank? %>
-  <div class="row" id="<%= review.book.title %>">
+  <div class="row">
 
     <% @reviews.each do |review| %>
-      <div class="col col-md-4 mb-2">
+      <div class="col col-md-4 mb-2 review" id="<%= review.book.title %>">
 
-        <div class="card">
+        <div class=" card" =" card" "=" card""="card" "" ">
           <div class="card-body text-center">
             <p><%= review.id %>
             </p>
@@ -25,29 +25,34 @@
 
             <% if review.user == current_user || current_user.admin? %>
 
-              <%= link_to(book_review_path(@book, review), method: :delete) do %>
+              <%= link_to(book_review_path(@book, review), method: :delete, id: "delete_#{review.title}") do %>
               <%= icon 'fas', 'trash' %>
             <% end %>
-
           <% end %>
-        </div>
+
+          <% if review.user == current_user %>
+            <%= link_to(edit_book_review_path(@book, review)) do %>
+            <%= icon 'fas', 'edit' %>
+          <% end %>
+        <% end %>
       </div>
     </div>
+  </div>
 
-    <div class="col col-md-8">
-      <div class="media my-1">
+  <div class="col col-md-8">
+    <div class="media my-1">
 
-        <div class="review media-body ml-1">
-          <h4 class="mt-0">
-            <%= review.title %>
-          </h4>
-          <%= review.content %>
+      <div class="review media-body ml-1">
+        <h4 class="mt-0">
+          <%= review.title %>
+        </h4>
+        <%= review.content %>
 
-        </div>
       </div>
     </div>
-    <hr>
+  </div>
+  <hr>
   <% end %>
-</div>
-</div>
+  </div>
+  </div>
 <% end %>

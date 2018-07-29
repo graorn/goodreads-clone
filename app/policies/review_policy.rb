@@ -14,14 +14,24 @@ class ReviewPolicy < ApplicationPolicy
   end
 
   def edit?
-    record.user
+    record.user == user
   end
 
   def update?
-    record.user
+    record.user == user
   end
 
   def destroy?
-    user.admin? || record.user
+    user.admin? || record.user == user
+  end
+
+  class Scope < Scope
+    def resolve
+      if user.admin?
+        scope.all
+      else
+        scope.where(user: user)
+      end
+    end
   end
 end
