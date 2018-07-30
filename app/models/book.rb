@@ -19,6 +19,7 @@ class Book < ApplicationRecord
   has_many :reviews
   has_many :reading_lists
   has_many :favorites
+  has_one_attached :cover
 
   validates_presence_of :title
   validates_presence_of :author

@@ -3,14 +3,18 @@
   <div class="col col-md-6 offset-md-3">
 
     <% if current_user.provider == 'facebook'%>
-
       <% image_tag current_user.image, class: 'img-fluid d-block m-auto' if current_user.uid.present? %>
 
       <% else %>
 
-        <%= gravatar_image_tag current_user.image, class: 'img-fluid rounded-circle d-block mx-auto mb-1', gravatar: {size: 64}
-        %>
+        <% if current_user.image.attached? %>
 
+          <%= image_tag current_user.image, class: 'img-fluid d-block m-auto' %>
+        <% else %>
+
+          <%= gravatar_image_tag current_user.email, class: 'img-fluid rounded-circle d-block mx-auto mb-1', gravatar: {size: 64}
+          %>
+        <% end %>
       <% end %>
 
       <ul class="list-group list-group-flush mb-5">

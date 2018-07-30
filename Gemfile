@@ -33,6 +33,9 @@ gem 'activeadmin'
 gem 'gravatar_image_tag', '~> 1.2'
 gem 'font-awesome-sass', '~> 5.0.13'
 
+gem 'image_processing', '~> 1.2'
+gem 'mini_magick'
+
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]

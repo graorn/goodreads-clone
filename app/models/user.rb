@@ -35,6 +35,7 @@ class User < ApplicationRecord
   has_many :reviews
   has_many :reading_lists
   has_many :favorites
+  has_one_attached :image
 
   # Validations
   validates :password, presence: true
