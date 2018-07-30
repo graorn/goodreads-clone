@@ -1,5 +1,47 @@
 <div class="row">
-  <p>
-    <%= current_user.email %>
-  </p>
-</div>
+
+  <div class="col col-md-6 offset-md-3">
+
+    <% if current_user.provider == 'facebook'%>
+
+      <% image_tag current_user.image, class: 'img-fluid d-block m-auto' if current_user.uid.present? %>
+
+      <% else %>
+
+        <%= gravatar_image_tag current_user.image, class: 'img-fluid rounded-circle d-block mx-auto mb-1', gravatar: {size: 64}
+        %>
+
+      <% end %>
+
+      <ul class="list-group list-group-flush mb-5">
+        <li class="list-group-item">Name:
+          <span class="float-right">
+            <%= current_user.name %>
+
+          </span>
+        </li>
+        <li class="list-group-item">Email:
+          <span class="float-right">
+            <%= current_user.email %>
+
+          </span>
+        </li>
+        <li class="list-group-item">Date of signup:
+          <span class="float-right">
+            <%= current_user.created_at.to_formatted_s(:short) %></li>
+
+        </span>
+        <li class="list-group-item">Last sign in:
+          <span class="float-right">
+            <%= current_user.last_sign_in_at.to_formatted_s(:short)%>
+
+          </span>
+        </li>
+      </ul>
+
+      <%= link_to 'Edit account', edit_user_registration_path(current_user), class: 'btn btn-info' %>
+      <%= link_to 'Delete account', registration_path(current_user), data: {confirm: "Are you sure?"}, method: :delete, class:
+      'btn btn-danger' %>
+
+    </div>
+  </div>

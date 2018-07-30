@@ -6,5 +6,7 @@ class ProfileController < ApplicationController
   def index
     @favorited_books = Favorite.all.where(user: current_user)
     @books_to_read = ReadingList.all.where(user: current_user)
+
+    authorize User, policy_class: ProfilePolicy
   end
 end

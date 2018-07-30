@@ -40,7 +40,7 @@ RSpec.feature 'Reviews', type: :feature do
 
 
 
-      find('fas fa-trash').click
+    find('fas fa-trash').click
 
     expect(page).to have_content 'Deleted review'
   end

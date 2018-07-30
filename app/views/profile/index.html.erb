@@ -1,23 +1,48 @@
-<p>
-  <a
-    class="btn btn-primary"
-    data-toggle="collapse"
-    href="#multiCollapseExample1"
-    role="button"
-    aria-expanded="false"
-    aria-controls="multiCollapseExample1">Favorite books</a>
-  <button
-    class="btn btn-primary"
-    type="button"
-    data-toggle="collapse"
-    data-target="#multiCollapseExample2"
-    aria-expanded="false"
-    aria-controls="multiCollapseExample2">To read
-  </button>
-</p>
+<!-- Tabs -->
 
-<%= render 'user_data' %>
+<ul class="nav nav-tabs mb-5" id="profile-tabs" role="tablist">
+  <li class="nav-item">
+    <a
+      class="nav-link"
+      id="favorite-books-tab"
+      data-toggle="tab"
+      href="#favorite-books"
+      role="tab"
+      aria-controls="favorite-books"
+      aria-selected="true">Favorite Books</a>
+  </li>
+  <li class="nav-item">
+    <a
+      class="nav-link"
+      id="reading-list-tab"
+      data-toggle="tab"
+      href="#reading-list"
+      role="tab"
+      aria-controls="reading-list"
+      aria-selected="false">Reading List</a>
+  </li>
+  <li class="nav-item">
+    <a
+      class="nav-link"
+      id="profile-tab"
+      data-toggle="tab"
+      href="#profile"
+      role="tab"
+      aria-controls="profile"
+      aria-selected="false">Profile</a>
+  </li>
+</ul>
 
-<%= render 'favorite_books' %>
+<!-- Tab contents -->
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="favorite-books" role="tabpanel" aria-labelledby="favorite-books-tab">
+    <%= render 'favorite_books' %>
+  </div>
+  <div class="tab-pane fade" id="reading-list" role="tabpanel" aria-labelledby="reading-list-tab">
+    <%= render 'reading_list' %>
+  </div>
+  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+    <%= render 'user_data' %>
 
-<%= render 'reading_list' %>
+  </div>
+</div>

@@ -21,19 +21,21 @@
         </li>
       </ul>
 
-      <ul class="navbar-nav mrl-auto">
+      <ul class="navbar-nav ml-auto">
 
         <li class="nav-item active">
           <div class="dropdown show">
 
-            <%= link_to(user_profile_index_path(current_user), class: 'nav-link dropdown-toggle', 'data-toggle': 'dropdown',role:
-            'button', id: 'dropdownMenuLink') do %>
+            <% if current_user.provider == 'facebook'%>
 
-            <% if current_user.provider == 'facebook' %>
-              <%= image_tag current_user.image, class: 'img-fluid rounded-circle', size: '32x32'%>
-            <% else %>
+              <% image_tag current_user.image if current_user.uid.present? %>
 
-              <% gravatar_image_tag current_user.email, gravatar: {size: 32}, class: 'img-fluid rounded-circle' %><% end %>
+              <% else %>
+                <%= link_to(user_profile_index_path(current_user), class: 'nav-link dropdown-toggle', 'data-toggle': 'dropdown',role:
+                'button', id: 'dropdownMenuLink') do %>
+
+                <%= gravatar_image_tag current_user.image, class: 'img-fluid rounded-circle', gravatar: {size: 32}%>
+              <% end %>
 
             <% end %>
 
