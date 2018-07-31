@@ -20,9 +20,11 @@
           <% icon 'fas', 'book', 'Books' %><% end %>
         </li>
 
-        <li class="nav-item active">
-          <%= link_to 'Add book', new_book_path, class: 'nav-link' %>
-        </li>
+        <% if current_user.admin == true %>
+          <li class="nav-item active">
+            <%= link_to 'Add book', new_book_path, class: 'nav-link' %>
+          </li>
+        <% end %>
       </ul>
 
       <ul class="navbar-nav ml-auto">
