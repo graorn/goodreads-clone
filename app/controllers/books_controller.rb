@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-# # frozen_string_literal: true
-#
 class BooksController < ApplicationController
   before_action :set_book,
                 only: %i[edit show update destroy favorite unfavorite place_book_to_reading_list remove_from_reading_list]
